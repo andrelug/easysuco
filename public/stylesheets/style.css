@@ -1,0 +1,6 @@
+.nav-sticky{
+    padding: 6px;
+}
+.nav-sticky .logo{
+    bottom: 27px !important;
+}

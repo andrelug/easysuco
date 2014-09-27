@@ -1,0 +1,299 @@
+extends layout
+
+block content
+    div.loader
+        div.spinner
+            div.double-bounce1
+            div.double-bounce2
+
+    div.nav-container
+        nav.top-bar
+            div.container
+                div.row.utility-menu
+                    div.col-sm-12
+                        div.utility-inner.clearfix
+                            span.alt-font
+                                i.icon.icon_pin 
+                                | belo horizonte, MG - Brasil&nbsp;&nbsp;&nbsp;
+                            span.alt-font
+                                i.icon.icon_mail 
+                                | &nbsp;contato@bonsaits.com
+
+                            div.pull-right
+                                a.btn.btn-primary.btn-white.btn-xs(href="login.html") entrar
+                                a.btn.btn-primary.btn-filled.btn-xs(href="login.html") entrar
+                                a.language(href="#"): img(src="images/english.png", alt="English")
+
+                div.row.nav-menu
+                    div.col-sm-3.columns.col-md-3
+                        a(href="/")
+                            img.logo.logo-dark(src="images/bonsaits-logo.png", style="max-width:200px;bottom:27px;")
+
+                    div.col-md-9.col-sm-9.columns
+                        ul.menu
+                            li
+                                a.inner-link(href="#sobre", target="default") Sobre
+                            li
+                                a.inner-link(href="#portfolio", target="default") Portfólio
+                            li
+                                a.inner-link(href="#orcamento", target="default") Orçamento
+                            li
+                                a.inner-link(href="#contato", target="default") Contato
+
+                            li
+                                a.inner-link(href="#faq", target="default") Perguntas
+
+                        ul.social-icons.text-right
+                            li
+                                a(href="#"): i.icon.social_twitter
+                            li
+                                a(href="#"): i.icon.social_facebook
+                            li
+                                a(href="#"): i.icon.social_instagram
+
+                div.mobile-toggle
+                    i.icon.icon_menu
+
+    div.main-container
+        header.page-header.resume-header
+            div.background-image-holder.parallax-background
+                img.background-image(src="images/hero8.jpg", alt="Background Image")
+
+            div.container
+                div.row
+                    div.col-sm-12
+                        h1.text-white.space-bottom-medium Fazemos WebSites
+                        span Sites institucionais, blogs, landing pages, hot pages...pode escolher
+
+        a#sobre.in-page-link
+
+        section.duplicatable-content.milestones
+            div.container
+                div.row
+                    div.col-md-offset-2.col-sm-10.col-sm-offset-1.text-center.col-md-8
+                        h1 Por que nos escolher?
+                        p.lead Dedicamos anos aperfeiçoando nossas habilidades para entregar sites bonitos, funcionais, efetivos e responsivos. Tudo isso de forma bem rápida!
+
+                div.row
+                    div.col-md-3.col-sm-6.text-center
+                        div.feature.feature-icon-large
+                            i.icon.icon-strategy.icon-large
+                            div.pin-body
+                            div.pin-head
+                            h5 Design
+                            span Trabalhamos somente com sites que impressionam
+                            span.sub
+
+                    div.col-md-3.col-sm-6.text-center
+                        div.feature.feature-icon-large
+                            i.icon.icon-profile-male.icon-large
+                            div.pin-body
+                            div.pin-head
+                            h5 Experiência de Usuário
+                            span Seus clientes e visitantes devem querer ficar no seu site
+                            span.sub
+
+                    div.col-md-3.col-sm-6.text-center
+                        div.feature.feature-icon-large
+                            i.icon.icon-circle-compass.icon-large
+                            div.pin-body
+                            div.pin-head
+                            h5 Detalhes
+                            span Pensamos em tudo para que você não tenha que se preocupar
+                            span.sub
+
+                    div.col-md-3.col-sm-6.text-center
+                        div.feature.feature-icon-large
+                            i.icon.icon-expand.icon-large
+                            div.pin-body
+                            div.pin-head
+                            h5 Flexibilidade
+                            span Nossos sites funcionam em qualquer tamanho de tela
+                            span.sub
+
+
+        a#portfolio.in-page-link
+
+        section.no-pad-bottom.projects-gallery
+            div.container
+                div.row
+                    div.col-md-offset-3.col-sm-8.col-sm-offset-2.text-center.col-md-6
+                        h1 Nossos últimos projetos
+                        p.lead Tivemos a oportunidade de trabalhar com excelentes empresas e ONGs. Veja alguns de nossos trabalhos
+
+            div.projects-wrapper.clearfix
+                div.container
+                    div.row
+                        ul.filters
+                            li.active(data-filter="*") tudo
+                            li(data-filter=".development") desenvolvimento
+                            li(data-filter=".consult") consultoria
+                            li(data-filter=".design") design
+
+                div.projects-container
+                    div.col-md-6.col-sm-12.no-pad.project.development.image-holder
+                        div.background-image-holder
+                            img.background-image(src="images/project1.jpg", alt="Background Image")
+                        div.hover-state
+                            div.align-vertical
+                                h1.text-white <strong>MS10</strong> User Experience
+                                p.text-white fj açsldkfj açlskfja çlkjfds <br> ds jfasçldk jfaçlk jfdaçslkj fçkl
+                                a.btn.btn-primary.btn-white(href="#") Ver projeto
+
+                    div.col-md-6.col-sm-12.no-pad.project.development.image-holder
+                        div.background-image-holder
+                            img.background-image(src="images/project2.jpg", alt="Background Image")
+                        div.hover-state
+                            div.align-vertical
+                                h1.text-white <strong>MS10</strong> User Experience
+                                p.text-white fj açsldkfj açlskfja çlkjfds <br> ds jfasçldk jfaçlk jfdaçslkj fçkl
+                                a.btn.btn-primary.btn-white(href="#") Ver projeto
+
+                    div.col-md-4.col-sm-6.no-pad.project.design.image-holder
+                        div.background-image-holder
+                            img.background-image(src="images/project3.jpg", alt="Background Image")
+                        div.hover-state
+                            div.align-vertical
+                                h1.text-white <strong>MS10</strong> User Experience
+                                p.text-white fj açsldkfj açlskfja çlkjfds <br> ds jfasçldk jfaçlk jfdaçslkj fçkl
+                                a.btn.btn-primary.btn-white(href="#") Ver projeto
+
+                    div.col-md-4.col-sm-6.no-pad.project.design.image-holder
+                        div.background-image-holder
+                            img.background-image(src="images/project4.jpg", alt="Background Image")
+                        div.hover-state
+                            div.align-vertical
+                                h1.text-white <strong>MS10</strong> User Experience
+                                p.text-white fj açsldkfj açlskfja çlkjfds <br> ds jfasçldk jfaçlk jfdaçslkj fçkl
+                                a.btn.btn-primary.btn-white(href="#") Ver projeto
+
+                    div.col-md-4.col-sm-6.no-pad.project.design.image-holder
+                        div.background-image-holder
+                            img.background-image(src="images/project5.jpg", alt="Background Image")
+                        div.hover-state
+                            div.align-vertical
+                                h1.text-white <strong>MS10</strong> User Experience
+                                p.text-white fj açsldkfj açlskfja çlkjfds <br> ds jfasçldk jfaçlk jfdaçslkj fçkl
+                                a.btn.btn-primary.btn-white(href="#") Ver projeto
+
+
+        section.strip.bg-primary
+            div.container
+                div.row.clearfix
+                    form.mail-list-signup
+                        div.col-sm-9.col-xs-12.pull-left.clear-fix
+                            h3.text-white.pull-left <span>Saiba tudo sobre WebSites:&nbsp;</span>
+                            input.signup-email-field.validate-required.validate-email(type="text", placeholder="Adicione seu e-mail aqui")
+
+                        div.col-sm-3.col-xs12.pull-right.text-right
+                            input.btn.btn-primary.btn-filled(type="submit", value="Inscrever")
+
+        a#orcamento.in-page-link
+
+        section.pure-text-centered
+            div.container
+                div.row
+                    div.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2.text-center
+                        span.sub.alt-font Simple Text Section
+                        h1: strong This heading
+                        p.lead Bla fjçdslak jaldsçkjf alçksdjf çalksdjf çalksdj fçlkasjd ç
+
+        a#contato.in-page-link
+
+        section.contact-center
+            div.container
+                div.row
+                    div.col-md-offset-3.col-sm-8.col-sm-offset-2.text-center.col-md-6
+                        h1 Contato
+                        p.lead Ficaremos muito felizes com sua mensagem. Fique à vontade para entrar em contato a qualquer momento. Responderemos rapidamente suas dúvidas.
+
+                div.row
+                    div.col-md-4.col-md-offset-4.col-sm-6.col-sm-offset-3
+                        div.form-wrapper.clearfix
+                            form.form-contact.email-form
+                                div.inputs-wrapper
+                                    input.form-name.validate-required(type="text", placeholder="Nome", name="name")
+                                    input.form-email.validate-required(type="text", placeholder="Email", name="email")
+                                    textarea.form-message.validate-required(name="message", placeholder="Mensagem")
+
+                                input.send-form(type="submit", value="Enviar")
+                                div.form-success
+                                    span.text-white Mensagem enviada - Obrigado!
+                                div.form-error
+                                    span.text-white Por favor complete os campos acima
+
+        a#faq.in-page-link
+
+        section.accordion-section
+            div.container
+                div.row
+                    div.col-sm-5.align-vertical.no-align-mobile.col-md-4
+                        ul.icons-large
+                            li
+                                i.icon.icon-tools-2.icon-large
+                            li
+                                i.icon.icon-lightbulb.icon-large
+                            li
+                                i.icon.icon-scissors.icon-large
+
+                        h1.no-margin-bottom Perguntas Frequentes
+
+                    div.col-sm-7.col-md-4
+                        ul.accordion
+                            li.active
+                                div.title
+                                    span Quero outro tipo de site que não está previsto no orçamento
+                                div.text
+                                    p: span Infelizmente no presente momento estamos apenas aceitando os tipos previstos em nosso sistema de orçamentos automático.
+
+                            li
+                                div.title
+                                    span Posso negociar o valor do orçamento?
+                                div.text
+                                    p: span Os valores de nossos orçamentos são calculados de acordo com vários fatores como tempo de trabalho, dificuldade, práticas do mercado, etc.&nbsp;
+                                    p: span Contudo, enviamos cupons de desconto para alguns casos especiais. Caso queira saber mais as condições, nos envie uma mensagem que termos prazer em explicar melhor.
+
+                            li
+                                div.title
+                                    span Posso usar meu próprio Design?
+                                div.text
+                                    p: span Com certeza! Contudo, pedimos que nos envie primeiramente para analisarmos e conferirmos se está de acordo com as melhores práticas de mercado para seu negócio
+                                    p: span Colocamos o design como aspecto fundamental de nosso processo de desenvolvimento pois muitas vezes é ele que irá destacar positivamente seu produto final.
+
+                            li
+                                div.title
+                                    span Como realizam a hospedagem?
+                                div.text
+                                    p: span Todos os sites hospedados por nós são colocados em um VPS (Virtual Private Server) com IP dedicado. Isto é, ele não compartilha recursos computacionais com nenhum outro.
+                                    p: span Como administramos nossos servidores, aumentamos suas capacidades de acordo com a necessidade e aumento de tráfego. Isso tudo para que você nunca tenha um site fora do ar ou lento.
+                            
+
+                    div.hidden-sm.align-vertical.no-align-movile.col-md-4
+                        div.feature
+                            h5 Amazinr faj
+                            p fasldkj lçasjd
+
+                        div.feature
+                            h5 Amazinr faj
+                            p fasldkj lçasjd
+
+    div.footer-container
+        footer.short.bg-secondary-1
+            div.container
+                div.row
+                    div.col-sm-10
+                        span.sub © Copright 2014 Bonsaits
+                        ul
+                            li 
+                                a(href="#") Termos de Uso
+                            li
+                                a(href="#") Blog
+
+                    div.col-sm-2.text-right
+                        ul.social-icons
+                            li
+                                a(href="#")
+                                    i.icon.social_twitter
+                            li
+                                a(href="#")
+                                    i.icon.social_facebook		

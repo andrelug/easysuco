@@ -1,0 +1,21 @@
+Express server listening on port \\.\pipe\bbb7b91c-ee6b-49ee-8733-9804d46ab537
+[90mGET / [32m200 [90m55ms - 13.65kb[0m
+[90mGET /img/lightbox/prev.png [33m404 [90m3ms[0m
+[90mGET /img/lightbox/next.png [33m404 [90m1ms[0m
+[90mGET /img/lightbox/loading.gif [33m404 [90m3ms[0m
+[90mGET /img/lightbox/close.png [33m404 [90m5ms[0m
+[90mGET / [36m304 [90m13ms[0m
+[90mGET /img/lightbox/prev.png [33m404 [90m0ms[0m
+[90mGET /img/lightbox/next.png [33m404 [90m2ms[0m
+[90mGET /img/lightbox/loading.gif [33m404 [90m1ms[0m
+[90mGET /img/lightbox/close.png [33m404 [90m2ms[0m
+[90mGET / [36m304 [90m10ms[0m
+[90mGET /img/lightbox/prev.png [33m404 [90m1ms[0m
+[90mGET /img/lightbox/next.png [33m404 [90m3ms[0m
+[90mGET /img/lightbox/loading.gif [33m404 [90m4ms[0m
+[90mGET /img/lightbox/close.png [33m404 [90m0ms[0m
+[90mGET / [36m304 [90m11ms[0m
+[90mGET /img/lightbox/prev.png [33m404 [90m0ms[0m
+[90mGET /img/lightbox/next.png [33m404 [90m0ms[0m
+[90mGET /img/lightbox/loading.gif [33m404 [90m2ms[0m
+[90mGET /img/lightbox/close.png [33m404 [90m4ms[0m
