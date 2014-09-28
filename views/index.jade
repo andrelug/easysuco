@@ -1,4 +1,4 @@
-extends layout
+extends partials/layout
 
 block content
     div.loader
@@ -6,53 +6,7 @@ block content
             div.double-bounce1
             div.double-bounce2
 
-    div.nav-container
-        nav.top-bar
-            div.container
-                div.row.utility-menu
-                    div.col-sm-12
-                        div.utility-inner.clearfix
-                            span.alt-font
-                                i.icon.icon_pin 
-                                | belo horizonte, MG - Brasil&nbsp;&nbsp;&nbsp;
-                            span.alt-font
-                                i.icon.icon_mail 
-                                | &nbsp;contato@bonsaits.com
-
-                            div.pull-right
-                                a.btn.btn-primary.btn-white.btn-xs(href="login.html") entrar
-                                a.btn.btn-primary.btn-filled.btn-xs(href="login.html") entrar
-                                a.language(href="#"): img(src="images/english.png", alt="English")
-
-                div.row.nav-menu
-                    div.col-sm-3.columns.col-md-3
-                        a(href="/")
-                            img.logo.logo-dark(src="images/bonsaits-logo.png", style="max-width:200px;bottom:27px;")
-
-                    div.col-md-9.col-sm-9.columns
-                        ul.menu
-                            li
-                                a.inner-link(href="#sobre", target="default") Sobre
-                            li
-                                a.inner-link(href="#portfolio", target="default") Portfólio
-                            li
-                                a.inner-link(href="#orcamento", target="default") Orçamento
-                            li
-                                a.inner-link(href="#contato", target="default") Contato
-
-                            li
-                                a.inner-link(href="#faq", target="default") Perguntas
-
-                        ul.social-icons.text-right
-                            li
-                                a(href="#"): i.icon.social_twitter
-                            li
-                                a(href="#"): i.icon.social_facebook
-                            li
-                                a(href="#"): i.icon.social_instagram
-
-                div.mobile-toggle
-                    i.icon.icon_menu
+    include pageelements/header
 
     div.main-container
         header.page-header.resume-header
@@ -193,10 +147,68 @@ block content
         section.pure-text-centered
             div.container
                 div.row
-                    div.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2.text-center
-                        span.sub.alt-font Simple Text Section
-                        h1: strong This heading
-                        p.lead Bla fjçdslak jaldsçkjf alçksdjf çalksdjf çalksdj fçlkasjd ç
+                    div.col-sm-12.col-md-12.text-center
+                        span.sub.alt-font Calculadora
+                        h1: strong Escolha seu WebSite
+                        div.row
+                            div.col-md-8
+                                div.row.calc-buttons
+                                    h5 Tipo de WebSite
+                                    br
+                                    div.btn-group(style="border: border-bottom-right-radius:0;border-bottom-left-radius:0;")
+                                        a.btn.btn-primary.active(style="border-bottom-left-radius:0;", title="Site Institucional", data-price="2.000")
+                                            i.icon.icon-presentation.icon-large
+                                            br
+                                            |  Institucional
+                                        a.btn.btn-primary(title="Blog", data-price="1.500")
+                                            i.icon.icon-pencil.icon-large 
+                                            br
+                                            |  Blog
+                                        a.btn.btn-primary(title="Landing Page", data-price="1000")
+                                            i.icon.icon-map.icon-large
+                                            br
+                                            |  Landing Page
+                                        a.btn.btn-primary(style="border-bottom-right-radius:0;", title="Hotsite", data-price="900")
+                                            i.icon.icon-megaphone.icon-large
+                                            br
+                                            |  Hotsite
+                                            
+                                    div.btn-group.btn-calc-bottom
+                                        a.btn.btn-primary(style="border-top-left-radius:0;", title="Ebook Landing", data-price="1000")
+                                            i.icon.icon-pictures.icon-large
+                                            br
+                                            |  Ebook Landing
+                                        a.btn.btn-primary(title="Ecommerce", data-price="4.000")
+                                            i.icon.icon-wallet.icon-large
+                                            br
+                                            |  Ecommerce
+                                        a.btn.btn-primary(title="Portfolio", data-price="800")
+                                            i.icon.icon-profile-male.icon-large
+                                            br
+                                            |  Portfolio
+                                        a.btn.btn-primary(style="border-top-right-radius:0;", title="Sistemas", data-price="-")
+                                            i.icon.icon-gears.icon-large
+                                            br
+                                            |  Sistemas
+
+                            dic.col-md-4
+                                div.row.calc-head
+                                    h4 Total: R$
+                                        span 500,00
+                                    
+                                div.row.calc-body
+                                    table.table.table-striped.table-calc
+                                        thead
+                                            tr
+                                                th Serviço
+                                                th Preço (R$)
+                                        tbody.t-body
+                                            
+                                        tfooter
+                                            tr
+                                                th Total:
+                                                th R$ 2.000,00
+                                            
 
         a#contato.in-page-link
 
@@ -277,23 +289,4 @@ block content
                             h5 Amazinr faj
                             p fasldkj lçasjd
 
-    div.footer-container
-        footer.short.bg-secondary-1
-            div.container
-                div.row
-                    div.col-sm-10
-                        span.sub © Copright 2014 Bonsaits
-                        ul
-                            li 
-                                a(href="#") Termos de Uso
-                            li
-                                a(href="#") Blog
-
-                    div.col-sm-2.text-right
-                        ul.social-icons
-                            li
-                                a(href="#")
-                                    i.icon.social_twitter
-                            li
-                                a(href="#")
-                                    i.icon.social_facebook		
+    include pageelements/footer	

@@ -1,0 +1,28 @@
+extends partials/layout
+
+block content
+    div.loader
+        div.spinner
+            div.double-bounce1
+            div.double-bounce2
+
+    include pageelements/loginheader
+    
+    div.main-container
+        section.no-pad.login-page.fullscreen-element
+            div.background-image-holder
+                img.background-image(src="images/hero4.jpg", alt="Fundo Login")
+
+            div.container.align-vertical
+                div.row
+                    div.col-md-4.col-md-offset-4.col-sm-6.col-sm-offset-3.text-center
+                        h1.text-white Login para continuar
+                        div.photo-form-wrapper.clearfix
+                            form
+                                input.form-email(type="text", placeholder="Email")
+                                input.form-password(type="password", placeholder="Senha")
+                                input.login-btn.btn-filled(type="submit", value="Entrar")
+
+                        a.text-white(href="#") Criar uma conta ➞
+                        br
+                        a.text-white(href="#") Esqueci a senha

@@ -502,3 +502,14 @@ function alignBottom(){
 		that.css('padding-top', padAmount);
 	});
 }
+$('.calc-buttons a').on('click', function () {
+    $('.calc-buttons a').removeClass('active');
+    $(this).addClass('active');
+    if ($('.t-body').html() != "") {
+        $('.t-body').find('.tipo-de-site').remove();
+        $('.t-body').append("<tr class='tipo-de-site'><td>" + $(this).attr('title') + "</td><td>" + $(this).attr("data-price") + "</td></tr>");
+    } else {
+        $('.t-body').append("<tr class='tipo-de-site'><td>" + $(this).attr('title') + "</td><td>" + $(this).attr("data-price") + "</td></tr>");
+    }
+
+});
