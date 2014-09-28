@@ -32,6 +32,18 @@
 }
 .table-calc td{
     width: 50%;
+    text-align: left;
+}
+.calc-placeholder{
+    vertical-align:middle !important;
+    text-align:center !important;
+    font-size: 16pt;
+}
+.calc-site-description {
+    background-color: #6DBCDB;
+    color: white;
+    padding: 10px;
+    display: none;
 }
 .btn-calc-bottom a{
     border-top: none;

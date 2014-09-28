@@ -1,6 +1,0 @@
-Express server listening on port \\.\pipe\7a386fc4-dbe1-4e7f-8359-73ab46f262f1
-[90mGET / [32m200 [90m54ms - 15.08kb[0m
-[90mGET /img/lightbox/prev.png [33m404 [90m2ms[0m
-[90mGET /img/lightbox/next.png [33m404 [90m2ms[0m
-[90mGET /img/lightbox/loading.gif [33m404 [90m3ms[0m
-[90mGET /img/lightbox/close.png [33m404 [90m4ms[0m

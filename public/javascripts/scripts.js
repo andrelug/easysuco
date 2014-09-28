@@ -502,14 +502,47 @@ function alignBottom(){
 		that.css('padding-top', padAmount);
 	});
 }
+
+function getMoney( str )
+{
+        return parseInt( str.replace(/[\D]+/g,'') );
+}
+function formatReal( int )
+{
+        var tmp = int+'';
+        tmp = tmp.replace(/([0-9]{2})$/g, ",$1");
+        if( tmp.length > 6 )
+                tmp = tmp.replace(/([0-9]{3}),([0-9]{2}$)/g, ".$1,$2");
+ 
+        return tmp;
+}
 $('.calc-buttons a').on('click', function () {
-    $('.calc-buttons a').removeClass('active');
-    $(this).addClass('active');
-    if ($('.t-body').html() != "") {
-        $('.t-body').find('.tipo-de-site').remove();
-        $('.t-body').append("<tr class='tipo-de-site'><td>" + $(this).attr('title') + "</td><td>" + $(this).attr("data-price") + "</td></tr>");
+    var thisbutton = $(this);
+    var count = 0;
+    var temClasse;
+    $('.calc-placeholder').parent().remove();
+
+    if ($(thisbutton).hasClass('active')) {
+        $(thisbutton).removeClass('active');
+        $('#' + $(thisbutton).attr('data-slug')).remove();
+        $('.calc-site-description').slideUp(200);
     } else {
-        $('.t-body').append("<tr class='tipo-de-site'><td>" + $(this).attr('title') + "</td><td>" + $(this).attr("data-price") + "</td></tr>");
+        $(thisbutton).addClass('active');
+        $('.t-body').append("<tr class='tipo-de-site' id='" + $(thisbutton).attr('data-slug') + "'><td>" + $(thisbutton).attr('title') + "</td><td class='calc-price'>" + formatReal($(thisbutton).attr("data-price")) + "</td></tr>");
+        $('.calc-site-description').slideUp(200, function () {
+            $(this).text($(thisbutton).attr('data-description')).slideDown(200);
+        });
     }
 
+
+
+
+    $('.t-body').children('tr').each(function () {
+        count += getMoney($(this).find('.calc-price').text());
+    });
+
+    $('.calc-total span').text(formatReal(count));
+    $('.calc-head span').text(formatReal(count));
+
+    
 });

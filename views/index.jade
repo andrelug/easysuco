@@ -154,47 +154,58 @@ block content
                             div.col-md-8
                                 div.row.calc-buttons
                                     h5 Tipo de WebSite
-                                    br
-                                    div.btn-group(style="border: border-bottom-right-radius:0;border-bottom-left-radius:0;")
-                                        a.btn.btn-primary.active(style="border-bottom-left-radius:0;", title="Site Institucional", data-price="2.000")
+                                    div.btn-group(style="border: border-bottom-right-radius:0;border-bottom-left-radius:0;margin-top:35px;")
+                                        a.btn.btn-primary(style="border-bottom-left-radius:0;", data-slug="site-institucional", title="Site Institucional", data-price="200000", data-description="Os sites institucionais tem como objetivo a apresentação de uma empresa ou projeto com o objetivo de mostrar os serviços oferecidos ou produtos vendidos por esta, informar seus clientes e facilitar o contato.")
                                             i.icon.icon-presentation.icon-large
                                             br
                                             |  Institucional
-                                        a.btn.btn-primary(title="Blog", data-price="1.500")
+                                        a.btn.btn-primary(title="Blog", data-price="150000", data-description="Seja para promover um produto ou serviço ou somente falar sobre algum assunto, o blog é a maneira mais fácil de colocar suas ideias na internet.", data-slug="blog")
                                             i.icon.icon-pencil.icon-large 
                                             br
                                             |  Blog
-                                        a.btn.btn-primary(title="Landing Page", data-price="1000")
+                                        a.btn.btn-primary(title="Landing Page", data-price="100000", data-description="Quando é apenas necessária uma página para transmitir uma informação, as landing pages são ideais e podem funcionar muito bem para shows, serviços ainda não lançados e muitos outros.", data-slug="landing-page")
                                             i.icon.icon-map.icon-large
                                             br
                                             |  Landing Page
-                                        a.btn.btn-primary(style="border-bottom-right-radius:0;", title="Hotsite", data-price="900")
+                                        a.btn.btn-primary(style="border-bottom-right-radius:0;", title="Hotsite", data-price="90000", data-description="Perfeitos para a anúncios e eventos, os hotsites funcionam com o objetivo de rapidamente transmitir uma ação de marketing. Normalmente possuem um tempo de vida determinado.", data-slug="hotsite")
                                             i.icon.icon-megaphone.icon-large
                                             br
                                             |  Hotsite
                                             
                                     div.btn-group.btn-calc-bottom
-                                        a.btn.btn-primary(style="border-top-left-radius:0;", title="Ebook Landing", data-price="1000")
+                                        a.btn.btn-primary(style="border-top-left-radius:0;", title="Ebook Landing", data-price="100000", data-description="Uma grande estratégia de captar potenciais clientes é através da distribuição de ebooks interessantes ao público alvo e é necessária uma boa landing page otimizada para o trabalho.", data-slug="ebook-landing")
                                             i.icon.icon-pictures.icon-large
                                             br
                                             |  Ebook Landing
-                                        a.btn.btn-primary(title="Ecommerce", data-price="4.000")
+                                        a.btn.btn-primary(title="Ecommerce", data-price="400000", data-description="Os sites de ecommerce funcionam como lojas virtuais para qualquer tipo de produto que desejar vender. São otimizadas para a venda e integradas com diversos sistemas de pagamento online.", data-slug="ecommerce")
                                             i.icon.icon-wallet.icon-large
                                             br
                                             |  Ecommerce
-                                        a.btn.btn-primary(title="Portfolio", data-price="800")
+                                        a.btn.btn-primary(title="Portfolio", data-price="80000", data-toggle="tooltip", data-placement="bottom", data-description="Nada chama mais atenção profisisonal do que ter seu próprio site mostrando seu currículo e portfolio de forma agradável e bonita.", data-slug="portfolio")
                                             i.icon.icon-profile-male.icon-large
                                             br
                                             |  Portfolio
-                                        a.btn.btn-primary(style="border-top-right-radius:0;", title="Sistemas", data-price="-")
+                                        a.btn.btn-primary(style="border-top-right-radius:0;", title="Sistemas", data-price="0", data-description="Sejam sistemas mais complexos ou projetos de StartUps, a Bonsaits consegue resolver seu problema. Entre em contato conosco para mais detalhes e marcamos uma reunião para discutir suas necessidades particulares.", data-slug="outros")
                                             i.icon.icon-gears.icon-large
                                             br
-                                            |  Sistemas
+                                            |  Outros
+
+                                div.row
+                                    div.col-md-10.col-md-offset-1.highlight
+                                        div.calc-site-description
+
+                                div.row
+                                    div.btn-group
+
+                                div.row
+                                    br
+                                    a.btn.btn-primary(href="#") Mais opções
+                                    
 
                             dic.col-md-4
                                 div.row.calc-head
                                     h4 Total: R$
-                                        span 500,00
+                                        span 0,00
                                     
                                 div.row.calc-body
                                     table.table.table-striped.table-calc
@@ -203,11 +214,13 @@ block content
                                                 th Serviço
                                                 th Preço (R$)
                                         tbody.t-body
-                                            
+                                            tr
+                                                td.calc-placeholder(colspan="2") Comece escolhento seu site ao lado!
+                                               
                                         tfooter
                                             tr
                                                 th Total:
-                                                th R$ 2.000,00
+                                                th.calc-total R$ <span>0</span>
                                             
 
         a#contato.in-page-link
