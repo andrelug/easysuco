@@ -66,3 +66,6 @@
     background-color: #FC4349;
     border-color: #FC4349;
 }
+.form-login-center input{
+    text-align: center;
+}

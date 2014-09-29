@@ -503,6 +503,9 @@ function alignBottom(){
 	});
 }
 
+
+// Custom Calc
+
 function getMoney( str )
 {
         return parseInt( str.replace(/[\D]+/g,'') );
@@ -544,5 +547,5 @@ $('.calc-buttons a').on('click', function () {
     $('.calc-total span').text(formatReal(count));
     $('.calc-head span').text(formatReal(count));
 
-    
+
 });
