@@ -193,18 +193,87 @@ block content
                                 div.row
                                     div.col-md-10.col-md-offset-1.highlight
                                         div.calc-site-description
+
+                                div.row
+                                    h5(style="margin-top:35px;") Hospedagem
+                                    div.btn-group.hospedagem
+                                        a.btn.btn-primary.btn-server(title="Já Contratado", data-description="Se você já tiver um servidor e só precisa instalar seu novo site nele, esta é sua opção.", data-price="15000", data-slug="jacontratado") Já contratado
+                                        a.btn.btn-primary.btn-server(title="Sem Preocupação (R$ 30,00 por mês)", data-description="Não quer se preocupar? Nós configuramos tudo em nosso servidor e você pode pagar a mensalidade de apenas <strong>R$ 30,00 por mês</strong> diretamente para a Bonsaits.", data-price="10000", data-slug="sempreocupacao") Sem preocupação
+                                        a.btn.btn-primary.btn-server(title="Quer Contratar", data-description="Podemos também contratar um serviço de sua preferência em seu nome e configurá-lo juntamente com você.", data-price="20000", data-slug="quercontratar") Quer contratar
+
+                                div.row
+                                    div.col-md-10.col-md-offset-1.highlight
+                                        div.hospedagem-site-description
                                             
                                 div.row
-                                    div.btn-group
-                                        a.btn.btn-primary Olá
+                                    div.col-md-6
+                                        h5(style="margin-top:35px;") Serviços
+                                        div.btn-group-vertical
+                                            a.btn.btn-primary(title="Email", data-price="10000", data-slug="email")
+                                                i.icon.icon-envelope.icon-large
+                                                |  Email 
+                                                i.icon.icon-envelope.icon-large
+                                            span.vert-info Configurar email personalizado
+                                            a.btn.btn-primary(title="Analytics", data-price="10000", data-slug="analytics")
+                                                i.icon.icon-linegraph.icon-large
+                                                |  Analytics  
+                                                i.icon.icon-linegraph.icon-large
+                                            span.vert-info Customizar Google Analytics
+                                            a.btn.btn-primary(title="CRM", data-price="20000", data-slug="crm")
+                                                i.icon.icon-happy.icon-large
+                                                |  CRM   
+                                                i.icon.icon-happy.icon-large
+                                            span.vert-info Integrar com um CRM
+                                            a.btn.btn-primary(title="Social", data-price="20000", data-slug="social")
+                                                i.icon.icon-chat.icon-large
+                                                |  Social   
+                                                i.icon.icon-chat.icon-large
+                                            span.vert-info Otimizar Presença Digital
+                                            a.btn.btn-primary(title="Tarefas", data-price="30000", data-slug="tarefas")
+                                                i.icon.icon-strategy.icon-large
+                                                |  Tarefas 
+                                                i.icon.icon-strategy.icon-large
+                                            span.vert-info Configuração de Gerenciador de Projetos
+                                    div.col-md-6
+                                        h5(style="margin-top:35px;") Mais opções
+                                        div.btn-group-vertical
+                                            a.btn.btn-primary(title="Gateway de Pagamento", data-price="30000", data-slug="gateway")
+                                                i.icon.icon-lock.icon-large
+                                                |  Gateway de Pagamento    
+                                                i.icon.icon-lock.icon-large
+                                            span.vert-info Integração com sistema de pagamentos online
+                                            a.btn.btn-primary(title="Transferência de Conteúdo (cada)", data-price="500", data-slug="trans")
+                                                i.icon.icon-upload.icon-large
+                                                |  Transferir Conteúdo    
+                                                i.icon.icon-upload.icon-large
+                                            span.vert-info Transferir artigos de blog ou similares
+                                            a.btn.btn-primary(title="Criação de Conteúdo (cada)", data-price="5000", data-slug="content")
+                                                i.icon.icon-documents.icon-large
+                                                |  Criação de Conteúdo    
+                                                i.icon.icon-documents.icon-large
+                                            span.vert-info Desenvolvimento de conteúdo otimizado para SEO
+                                            a.btn.btn-primary(title="Aquisição de Domínios (cada - sem o domínio)", data-price="5000", data-slug="dominios")
+                                                i.icon.icon-magnifying-glass.icon-large
+                                                |  Aquisição de Domínios    
+                                                i.icon.icon-magnifying-glass.icon-large
+                                            span.vert-info Procuramos os melhores preços
+                                            a.btn.btn-primary(title="Outros", data-price="0", data-slug="outrosvert")
+                                                i.icon.icon-streetsign.icon-large
+                                                |  Outros    
+                                                i.icon.icon-streetsign.icon-large
+                                            span.vert-info Entramos em contato!
+                                
                                 div.row
-                                    br
-                                    a.btn.btn-primary(href="#") Mais opções
-                                    
+                                    h5(style="margin-top:35px;") Treinamento (Via Skype)
+                                    div.btn-group.hora
+                                        a.btn.btn-primary.btn-servicos(title="Treinamento 1 hora", data-price="0", data-slug="1h") 1h (Grátis)
+                                        a.btn.btn-primary.btn-servicos(title="Treinamento 2 horas", data-price="10000", data-slug="2h") 2h
+                                        a.btn.btn-primary.btn-servicos(title="Treinamento 5 horas", data-price="40000", data-slug="5h") 5h
+                                        a.btn.btn-primary.btn-servicos(title="Treinamento 10 horas", data-price="70000", data-slug="10h") 10h
 
                             dic.col-md-4
                                 div.row.calc-head
-                                    h4 Total: R$
+                                    h4 <strong>Total:</strong> R$ 
                                         span 0,00
                                     
                                 div.row.calc-body
@@ -221,6 +290,10 @@ block content
                                             tr
                                                 th Total:
                                                 th.calc-total R$ <span>0</span>
+
+                                div.row
+                                    a.btn.btn-primary.btn-filled.btn-block.enviar-orcamento Enviar Orçamento
+                                    div.enviar-confirm A Bonsaits agradece seu interesse! <br>Entraremos em contato em breve.
                                             
 
         a#contato.in-page-link

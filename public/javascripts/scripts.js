@@ -519,10 +519,11 @@ function formatReal( int )
  
         return tmp;
 }
+
+/* TIPO DE SITE */
 $('.calc-buttons a').on('click', function () {
     var thisbutton = $(this);
     var count = 0;
-    var temClasse;
     $('.calc-placeholder').parent().remove();
 
     if ($(thisbutton).hasClass('active')) {
@@ -533,12 +534,9 @@ $('.calc-buttons a').on('click', function () {
         $(thisbutton).addClass('active');
         $('.t-body').append("<tr class='tipo-de-site' id='" + $(thisbutton).attr('data-slug') + "'><td>" + $(thisbutton).attr('title') + "</td><td class='calc-price'>" + formatReal($(thisbutton).attr("data-price")) + "</td></tr>");
         $('.calc-site-description').slideUp(200, function () {
-            $(this).text($(thisbutton).attr('data-description')).slideDown(200);
+            $(this).html($(thisbutton).attr('data-description')).slideDown(200);
         });
     }
-
-
-
 
     $('.t-body').children('tr').each(function () {
         count += getMoney($(this).find('.calc-price').text());
@@ -549,3 +547,94 @@ $('.calc-buttons a').on('click', function () {
 
 
 });
+
+/* HOSPEDAGEM */
+$('.hospedagem a').on('click', function () {
+    var thisbutton = $(this);
+    var count = 0;
+    $('.calc-placeholder').parent().remove();
+
+    if ($(thisbutton).hasClass('active')) {
+        $(thisbutton).removeClass('active');
+        $('#' + $(thisbutton).attr('data-slug')).remove();
+        $('.hospedagem-site-description').slideUp(200);
+    } else {
+        if ($('.hospedagem').find('.active') != false) {
+            $('.hospedagem a').removeClass('active');
+            $('.tipo-hospedagem').remove();
+            $('.hospedagem-site-description').slideUp(200);
+        }
+        $(thisbutton).addClass('active');
+        $('.t-body').append("<tr class='tipo-hospedagem' id='" + $(thisbutton).attr('data-slug') + "'><td>" + $(thisbutton).attr('title') + "</td><td class='calc-price'>" + formatReal($(thisbutton).attr("data-price")) + "</td></tr>");
+        $('.hospedagem-site-description').slideUp(200, function () {
+            $(this).html($(thisbutton).attr('data-description')).slideDown(200);
+        });
+    }
+
+    $('.t-body').children('tr').each(function () {
+        count += getMoney($(this).find('.calc-price').text());
+    });
+
+    $('.calc-total span').text(formatReal(count));
+    $('.calc-head span').text(formatReal(count));
+});
+
+/* SERVIÇOS E MAIS OPÇÕES */
+$('.btn-group-vertical a').on('click', function () {
+    var thisbutton = $(this);
+    var count = 0;
+    $('.calc-placeholder').parent().remove();
+
+    if ($(thisbutton).next('span').hasClass('vert-active')) {
+        $('#' + $(thisbutton).attr('data-slug')).remove();
+        $(thisbutton).removeClass('vert-selected');
+        $(thisbutton).next('span').removeClass('vert-active');
+    } else {
+        $(thisbutton).addClass('vert-selected');
+        $(thisbutton).next('span').addClass('vert-active');
+        $('.t-body').append("<tr class='tipo-de-site' id='" + $(thisbutton).attr('data-slug') + "'><td>" + $(thisbutton).attr('title') + "</td><td class='calc-price'>" + formatReal($(thisbutton).attr("data-price")) + "</td></tr>");
+    }
+
+    $('.t-body').children('tr').each(function () {
+        count += getMoney($(this).find('.calc-price').text());
+    });
+
+    $('.calc-total span').text(formatReal(count));
+    $('.calc-head span').text(formatReal(count));
+
+});
+
+/* TREINAMENTO */
+$('.hora a').on('click', function () {
+    var thisbutton = $(this);
+    var count = 0;
+    $('.calc-placeholder').parent().remove();
+
+    if ($(thisbutton).hasClass('active')) {
+        $(thisbutton).removeClass('active');
+        $('#' + $(thisbutton).attr('data-slug')).remove();
+        $('.hospedagem-site-description').slideUp(200);
+    } else {
+        if ($('.hora').find('.active') != false) {
+            $('.hora a').removeClass('active');
+            $('.tipo-hora').remove();
+        }
+        $(thisbutton).addClass('active');
+        $('.t-body').append("<tr class='tipo-hora' id='" + $(thisbutton).attr('data-slug') + "'><td>" + $(thisbutton).attr('title') + "</td><td class='calc-price'>" + formatReal($(thisbutton).attr("data-price")) + "</td></tr>");
+    }
+
+    $('.t-body').children('tr').each(function () {
+        count += getMoney($(this).find('.calc-price').text());
+    });
+
+    $('.calc-total span').text(formatReal(count));
+    $('.calc-head span').text(formatReal(count));
+});
+
+/* ENVIAR ORÇAMENTO */
+$('.enviar-orcamento').on('click', function () {
+    var thisone = $(this);
+    $(thisone).addClass('disabled');
+    $('.enviar-confirm').delay(300).slideDown();
+
+})

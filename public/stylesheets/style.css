@@ -14,8 +14,26 @@
     .btn-calc-bottom a{
         border-top: 2px solid #6dbcdb !important;
     }
+    .row .hospedagem a,.row .hora a{
+        width: 100% !important;
+    }
+    .btn-group{
+        padding: 0 10px !important;
+    }
+    .row .calc-buttons .btn-group a{
+        width: 50% !important;
+    }
 }
-
+.btn-group{
+    padding: 0 30px;
+    width: 100%;
+}
+.calc-buttons .btn-group a, .hora a{
+    width: 25% !important;
+}
+.hospedagem a{
+    width: 33% !important;
+}
 .calc-head{
     border-radius: 25px;
     background-color: #6DBCDB;
@@ -28,7 +46,7 @@
     margin-top: 20px;
 }
 .table-calc{
-    min-height: 400px;
+    min-height: 500px;
 }
 .table-calc td{
     width: 50%;
@@ -39,7 +57,7 @@
     text-align:center !important;
     font-size: 16pt;
 }
-.calc-site-description {
+.calc-site-description, .hospedagem-site-description {
     background-color: #6DBCDB;
     color: white;
     padding: 10px;
@@ -49,8 +67,7 @@
     border-top: none;
 }
 .btn-group{
-    width: 90%;
-    text-align: center
+    text-align: center;
 }
 .btn-group i{
     font-size: 20pt;
@@ -60,12 +77,74 @@
     margin: 0;
     padding: 30px 0;
     font-size: 11pt;
-    width: 25% !important;
 }
 .btn-primary.active{
-    background-color: #FC4349;
-    border-color: #FC4349;
+    background-color: #6DBCDB;
+    border-color: #6DBCDB;
+    box-shadow: none;
 }
 .form-login-center input{
     text-align: center;
+}
+.btn-group-vertical{
+    width: 100%;
+    padding: 0 20px;
+}
+.btn-group-vertical a{
+    border-radius: 0;
+    font-size: 12pt;
+}
+.btn-servicos, .btn-server{
+    padding: 15px !important;
+}
+.btn-server{
+    border-radius: 0;
+}
+.btn-group-vertical i:first-child{
+    position:absolute;
+    left:10px;
+    font-size: 14pt;
+}
+.btn-group-vertical i:last-child{
+    position:absolute;
+    right:10px;
+    font-size: 14pt;
+}
+.vert-info{
+    background-color: #6DBCDB;
+    color: white;
+    height: 0;
+    display: block;
+    padding: 0;
+    -webkit-transition: all 200ms ease;
+    -moz-transition: all 200ms ease;
+    -ms-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease;
+}
+.vert-active{
+    height: 30px;
+    padding-top: 5px;
+    -webkit-transition: all 200ms ease;
+    -moz-transition: all 200ms ease;
+    -ms-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease;
+}
+.vert-selected{
+    background-color: #6DBCDB;
+    color: white;
+}
+.enviar-orcamento{
+    background-color:#2C3E50 !important;
+    border:none;
+    margin-top: 35px;
+}
+.enviar-confirm{
+    padding: 20px;
+    background-color: #F9F9F9;
+    border-radius: 25px;
+    font-size: 14pt;
+    line-height: 2;
+    display: none;
 }
