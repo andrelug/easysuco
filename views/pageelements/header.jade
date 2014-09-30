@@ -12,8 +12,12 @@ div.nav-container
                             | &nbsp;contato@bonsaits.com
 
                         div.pull-right
-                            a.btn.btn-primary.login-button.btn-xs(href="login") entrar
-                            a.btn.btn-primary.btn-filled.btn-xs(href="login") registrar
+                            if (!locals.user)
+                                a.btn.btn-primary.login-button.btn-xs(href="entrar") entrar
+                                a.btn.btn-primary.btn-filled.btn-xs(href="registrar") registrar
+                            else
+                                a.btn.btn-primary.login-button.btn-xs(href="painel") painel
+                                a.btn.btn-primary.btn-filled.btn-xs(href="logout") sair
                             a.language(href="#"): img(src="images/english.png", alt="English")
 
             div.row.nav-menu

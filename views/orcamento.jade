@@ -1,0 +1,56 @@
+extends partials/layout
+
+block content
+    div.loader
+        div.spinner
+            div.double-bounce1
+            div.double-bounce2
+
+    include pageelements/painelheader
+    
+    div.main-container
+        header.page-header.resume-header(style="padding:150px 0;")
+            div.background-image-holder.parallax-background
+                img.background-image(alt="background Image", src="/images/hero22.jpg")
+
+            div.container
+                div.row
+                    div.col-sm-12
+                        h1.text-white.space-bottom-medium Análise de Orçamento
+                        span #{info.nome}
+                        
+
+        div.text-banner
+            div.container
+                div.row
+                    div.col-sm-12
+                        h1.center-block Painel
+                        if(user.status == 'admin')
+                            h2 Orçamento para #{info.nome}
+                            
+                            table.table.table-striped
+                                thead
+                                    tr
+                                        th Item
+                                        th Quantidade
+                                        th Preço
+                                tbody.t-analysis
+                                    each item, i in info.itens
+                                        tr
+                                            td #{info.codes[i]}
+                                            td.price-analysis #{info.numbers[i]}
+                                            td.calc-price-analysis #{info.prices[i]}
+                                tfooter
+                                    tr
+                                        th(colspan="2") Total:
+                                        th.analysis-price
+
+
+                br
+                br
+                a.btn.btn-primary.pull-right(href="/painel",) Voltar
+                br
+                br
+                br
+
+    include pageelements/footer	

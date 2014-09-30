@@ -1,5 +1,5 @@
 div.nav-container
-    nav.top-bar.overlay-bar
+    nav.top-bar
         div.container
             div.row.utility-menu
                 div.col-sm-12
@@ -12,16 +12,17 @@ div.nav-container
                             | &nbsp;contato@bonsaits.com
 
                         div.pull-right
-                            a.btn.btn-primary.btn-white.btn-xs(href="entrar") entrar
-                            a.btn.btn-primary.btn-filled.btn-xs(href="registrar") registrar
-                            a.language(href="#"): img(src="images/english.png", alt="English")
+                            if (!locals.user)
+                                a.btn.btn-primary.login-button.btn-xs(href="/") Página
+                                a.btn.btn-primary.btn-filled.btn-xs(href="/preferencias") Preferências
+                            else
+                                a.btn.btn-primary.login-button.btn-xs(href="painel") painel
+                                a.btn.btn-primary.btn-filled.btn-xs(href="logout") sair
 
             div.row.nav-menu
                 div.col-sm-3.columns.col-md-3
                     a(href="/")
-                        img.logo.logo-light(src="images/bonsaits-logo-white.png", style="max-width:200px;bottom:27px;")
-
-                div.col-md-9.col-sm-9.columns
+                        img.logo.logo-dark(src="/images/bonsaits-logo.png", style="max-width:200px;bottom:27px;")
 
 
             div.mobile-toggle

@@ -1,0 +1,48 @@
+extends partials/layout
+
+block content
+    div.loader
+        div.spinner
+            div.double-bounce1
+            div.double-bounce2
+
+    include pageelements/painelheader
+    
+    div.main-container
+        header.page-header.resume-header(style="padding:150px 0;")
+            div.background-image-holder.parallax-background
+                img.background-image(alt="background Image", src="images/hero22.jpg")
+
+            div.container
+                div.row
+                    div.col-sm-12
+                        h1.text-white.space-bottom-medium Painel Bonsaits
+                        span Quanto mais sites, melhor!
+                        
+
+        div.text-banner
+            div.container
+                div.row
+                    div.col-sm-12
+                        h1.center-block Painel
+                        if(user.status == 'admin')
+                            h2 Olá André
+                            table.table.table-striped
+                                thead
+                                    tr
+                                        th Nome
+                                        th Email
+                                        th Data
+                                        th Status
+                                tbody
+                                    for orcs in orc
+                                        tr
+                                            td: a(href="/orcamentos/#{orcs.id}") #{orcs.nome}
+                                            td #{orcs.email}
+                                            td #{orcs.date}
+                                            td #{orcs.status}
+
+                br mongodb://bonsaits:0pP_tyBZrB9DNd38NTqmqHZRJAeGhb.Y10jZq6A5qeM-@ds027748.mongolab.com:27748/bonsaits
+                br mongodb://bonsaitssessions:upBuOQXwWIS5hi_aS9Wz7hOUnFriY_XUCEExUE_cykE-@ds052827.mongolab.com:52827/bonsaitssessions
+
+    include pageelements/footer	

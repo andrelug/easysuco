@@ -519,6 +519,17 @@ function formatReal( int )
  
         return tmp;
 }
+function calcFinal () {
+    if($('.desconto-code').text() == ""){
+        $('.total-final').text(formatReal( getMoney($('.calc-total span').text())));
+    }else {
+        $('.total-final').text(formatReal( getMoney($('.calc-total span').text()) - getMoney($('.desconto-code').text())));
+        if(parseInt($('.total-final').text().replace('.', '')) < 0){
+            $('.total-final').text(formatReal("000"));
+        }
+    }
+    
+}
 
 /* TIPO DE SITE */
 $('.calc-buttons a').on('click', function () {
@@ -532,7 +543,7 @@ $('.calc-buttons a').on('click', function () {
         $('.calc-site-description').slideUp(200);
     } else {
         $(thisbutton).addClass('active');
-        $('.t-body').append("<tr class='tipo-de-site' id='" + $(thisbutton).attr('data-slug') + "'><td>" + $(thisbutton).attr('title') + "</td><td class='calc-price'>" + formatReal($(thisbutton).attr("data-price")) + "</td></tr>");
+        $('.t-body').append("<tr class='tipo-de-site' id='" + $(thisbutton).attr('data-slug') + "'><td id='" + $(thisbutton).attr('data-id') + "'>" + $(thisbutton).attr('title') + "</td><td><input onkeypress='return event.charCode >= 48 && event.charCode <= 57' type='text' class='calc-item-number' value='1' /></td><td class='calc-price'>" + formatReal($(thisbutton).attr("data-price")) + "</td></tr>");
         $('.calc-site-description').slideUp(200, function () {
             $(this).html($(thisbutton).attr('data-description')).slideDown(200);
         });
@@ -544,6 +555,7 @@ $('.calc-buttons a').on('click', function () {
 
     $('.calc-total span').text(formatReal(count));
     $('.calc-head span').text(formatReal(count));
+    calcFinal();
 
 
 });
@@ -565,7 +577,7 @@ $('.hospedagem a').on('click', function () {
             $('.hospedagem-site-description').slideUp(200);
         }
         $(thisbutton).addClass('active');
-        $('.t-body').append("<tr class='tipo-hospedagem' id='" + $(thisbutton).attr('data-slug') + "'><td>" + $(thisbutton).attr('title') + "</td><td class='calc-price'>" + formatReal($(thisbutton).attr("data-price")) + "</td></tr>");
+        $('.t-body').append("<tr class='tipo-hospedagem' id='" + $(thisbutton).attr('data-slug') + "'><td id='" + $(thisbutton).attr('data-id') + "'>" + $(thisbutton).attr('title') + "</td><td><input onkeypress='return event.charCode >= 48 && event.charCode <= 57' type='hidden' class='calc-item-number' value='1' /></td><td class='calc-price'>" + formatReal($(thisbutton).attr("data-price")) + "</td></tr>");
         $('.hospedagem-site-description').slideUp(200, function () {
             $(this).html($(thisbutton).attr('data-description')).slideDown(200);
         });
@@ -577,6 +589,7 @@ $('.hospedagem a').on('click', function () {
 
     $('.calc-total span').text(formatReal(count));
     $('.calc-head span').text(formatReal(count));
+    calcFinal();
 });
 
 /* SERVIÇOS E MAIS OPÇÕES */
@@ -592,7 +605,7 @@ $('.btn-group-vertical a').on('click', function () {
     } else {
         $(thisbutton).addClass('vert-selected');
         $(thisbutton).next('span').addClass('vert-active');
-        $('.t-body').append("<tr class='tipo-de-site' id='" + $(thisbutton).attr('data-slug') + "'><td>" + $(thisbutton).attr('title') + "</td><td class='calc-price'>" + formatReal($(thisbutton).attr("data-price")) + "</td></tr>");
+        $('.t-body').append("<tr class='tipo-de-site' id='" + $(thisbutton).attr('data-slug') + "'><td id='" + $(thisbutton).attr('data-id') + "'>" + $(thisbutton).attr('title') + "</td><td><input onkeypress='return event.charCode >= 48 && event.charCode <= 57' type='text' class='calc-item-number' value='1' /></td><td class='calc-price'>" + formatReal($(thisbutton).attr("data-price")) + "</td></tr>");
     }
 
     $('.t-body').children('tr').each(function () {
@@ -601,6 +614,7 @@ $('.btn-group-vertical a').on('click', function () {
 
     $('.calc-total span').text(formatReal(count));
     $('.calc-head span').text(formatReal(count));
+    calcFinal();
 
 });
 
@@ -620,7 +634,7 @@ $('.hora a').on('click', function () {
             $('.tipo-hora').remove();
         }
         $(thisbutton).addClass('active');
-        $('.t-body').append("<tr class='tipo-hora' id='" + $(thisbutton).attr('data-slug') + "'><td>" + $(thisbutton).attr('title') + "</td><td class='calc-price'>" + formatReal($(thisbutton).attr("data-price")) + "</td></tr>");
+        $('.t-body').append("<tr class='tipo-hora' id='" + $(thisbutton).attr('data-slug') + "'><td id='" + $(thisbutton).attr('data-id') + "'>" + $(thisbutton).attr('title') + "</td><td><input onkeypress='return event.charCode >= 48 && event.charCode <= 57' type='hidden' class='calc-item-number' value='1' /></td><td class='calc-price'>" + formatReal($(thisbutton).attr("data-price")) + "</td></tr>");
     }
 
     $('.t-body').children('tr').each(function () {
@@ -629,12 +643,100 @@ $('.hora a').on('click', function () {
 
     $('.calc-total span').text(formatReal(count));
     $('.calc-head span').text(formatReal(count));
+    calcFinal();
+});
+
+/* QUANTIDADE CALC */
+$(document).on('keyup', '.calc-item-number', function (event) {
+    var count = 0;
+    var dataprice = $('[data-id=' + $(this).parent("td").parent('tr').find('td:first-child').attr("id") + ']').attr('data-price');
+
+    $(this).parent('td').siblings('.calc-price').text(formatReal(dataprice * $(this).val()));
+
+    $('.t-body').children('tr').each(function () {
+        count += getMoney($(this).find('.calc-price').text());
+    });
+
+    $('.calc-total span').text(formatReal(count));
+    $('.calc-head span').text(formatReal(count));
+    calcFinal();
 });
 
 /* ENVIAR ORÇAMENTO */
 $('.enviar-orcamento').on('click', function () {
     var thisone = $(this);
-    $(thisone).addClass('disabled');
-    $('.enviar-confirm').delay(300).slideDown();
+    var str = [];
+    var cupon;
 
-})
+    if ($('.desconto-code').attr('id') == undefined) {
+        cupon = "none";
+    } else {
+        cupon = $('.desconto-code').attr('id');
+    }
+
+    $.each($('.t-body td:first-child'), function (index, item) {
+        str.push({ item: $(item).attr('id'), number: $(item).parent('tr').find('input').val() });
+    });
+
+    if ($('.t-body').find('.calc-price').html() == undefined) {
+        $('.enviar-itens').delay(300).slideDown().delay(3000).slideUp();
+    } else if ($('.contato-nome').val() === "" || $('.contato-email').val() === "") {
+        $('.enviar-complete').delay(300).slideDown().delay(3000).slideUp();
+    } else {
+        $.ajax({
+            type: "POST",
+            url: "/orcamento",
+            data: { str: str, nome: $('.contato-nome').val(), email: $('.contato-email').val(), cupon: cupon }
+        }).done(function (data) {
+            if (data == "OK") {
+                $(thisone).addClass('disabled');
+                $('.enviar-confirm').delay(300).slideDown();
+            } else {
+                $(thisone).addClass('disabled');
+                $('.enviar-error').delay(300).slideDown();
+            }
+        });
+    }
+});
+
+/* CUPONS */
+$('#cupom').submit(function () {
+    var thisone = $('#cupom').parent('th').parent('tr');
+    var dados = $(this).serialize();
+    var cupon = $('.cupon-field').val();
+
+    $.ajax({
+        type: 'GET',
+        url: '/cupons',
+        data: dados
+    }).done(function (data) {
+        thisone.animate({ opacity: 0 }, 200, function () {
+            thisone.html('<th colspan="2" class="desconto">Desconto: </th><th class="desconto desconto-code" id="'+ cupon +'">- R$ ' + formatReal(data) + '</th>').animate({ opacity: 1 }, 200);
+            calcFinal();
+        });
+    });
+
+    return false;
+});
+
+
+
+$(document).on('change', '.calc-total span', function () {
+    alert('bla')
+    if(getMoney($('.desconto-code').text()) > 0){
+        $('.desconto-code').text(formatReal(getMoney($('.calc-total').text()) - getMoney($('.total-final').text()) ));
+    }
+});
+
+
+$(document).ready(function () {
+    var analysisPrice = 0;
+
+    $('.t-analysis').children('tr').each(function () {
+        
+        $(this).find('.calc-price-analysis').text(formatReal($(this).find('.calc-price-analysis').text() * $(this).find('.price-analysis').text()));
+        analysisPrice += getMoney($(this).find('.calc-price-analysis').text());
+    })
+
+    $('.analysis-price').text(formatReal(analysisPrice));
+});

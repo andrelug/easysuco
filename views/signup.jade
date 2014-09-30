@@ -16,8 +16,8 @@ block content
             div.container.align-vertical
                 div.row
                     div.col-md-4.col-md-offset-4.col-sm-6.col-sm-offset-3.text-center
-                        h1.text-white Login para continuar
+                        h1.text-white Registro Bonsaits
+                        if(message.length > 0)
+                            h3.text-white #{message}
                         div.photo-form-wrapper.clearfix
-                            a.btn.btn-primary.btn-filled(href="/auth/facebook", style="background-color:#6dbcdb;border:none;") <i class="icon social_facebook"></i> Facebook Login 
-
-                        a.text-white(href="/registrar") Criar uma conta ➞
+                            a.btn.btn-primary.btn-filled(href="/auth/facebook", style="background-color:#6dbcdb;border:none;") <i class="icon social_facebook"></i> Registro Facebook 
