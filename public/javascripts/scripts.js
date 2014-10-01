@@ -733,7 +733,7 @@ $(document).ready(function () {
     var analysisPrice = 0;
 
     $('.t-analysis').children('tr').each(function () {
-        
+
         $(this).find('.calc-price-analysis').text(formatReal($(this).find('.calc-price-analysis').text() * $(this).find('.price-analysis').text()));
         analysisPrice += getMoney($(this).find('.calc-price-analysis').text());
     })

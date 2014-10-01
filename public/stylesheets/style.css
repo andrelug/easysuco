@@ -194,3 +194,16 @@
 .desconto{
     vertical-align: middle !important;
 }
+.zls-bubimg{
+    display: none;
+}
+.zls-small .zls_fltxtcnt{
+    line-height: 1;
+}
+.zls-bublemain {
+    top: 45px !important;
+    right: -15px !important;
+}
+.bg-gueime{
+    background-position:50% 1% !important;
+}
