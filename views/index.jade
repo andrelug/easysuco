@@ -310,11 +310,14 @@ block content
                                     br
                                     input.contato-nome(type="text", placeholder="Seu nome")
                                     input.contato-email(type="text", placeholder="Seu email")
+                                    input.form-terms(type="checkbox", name="termos", style="margin-right:10px;margin-top:10px;")
+                                    | Concordo comso <a href="/termos-de-uso" data-toggle="modal" data-target="#termos">Termos de Uso</a>  
                                     a.btn.btn-primary.btn-filled.btn-block.enviar-orcamento Enviar Orçamento
                                     div.enviar-confirm A Bonsaits agradece seu interesse! <br>Entraremos em contato em breve.
                                     div.enviar-complete Por favor preencha seu nome e email
                                     div.enviar-itens Por favor adicione algum serviço ou WebSite ao lado para continuar
                                     div.enviar-error Ops. Aparentemente houve um erro.<br> Por favor tente novamente
+                                    div.enviar-terms Por favor concorde com os termos de uso
                                             
 
         a#contato.in-page-link
@@ -389,11 +392,10 @@ block content
 
                     div.hidden-sm.align-vertical.no-align-movile.col-md-4
                         div.feature
-                            h5 Amazinr faj
-                            p fasldkj lçasjd
+                            h5 Outras Questões
+                            p Se você tiver qualquer outra dúvida, não deixe de nos enviar uma mensagem que solucionamos na hora!
 
-                        div.feature
-                            h5 Amazinr faj
-                            p fasldkj lçasjd
+    
+                    
 
     include pageelements/footer	

@@ -138,18 +138,18 @@
 .enviar-orcamento{
     background-color:#2C3E50 !important;
     border:none;
-    margin-top: 35px;
+    margin-top: 20px;
     padding: 20px;
 }
-.enviar-confirm, .enviar-error, .enviar-complete, .enviar-itens {
-    padding: 19px;
+.enviar-confirm, .enviar-error, .enviar-complete, .enviar-itens, .enviar-terms {
+    padding: 17px;
     background-color: #F9F9F9;
     border-radius: 25px;
     font-size: 14pt;
     line-height: 2;
     display: none;
 }
-.enviar-error, .enviar-complete, .enviar-itens {
+.enviar-error, .enviar-complete, .enviar-itens, .enviar-terms {
     background-color: #FC4349 !important;
     color: white;
 }

@@ -682,6 +682,8 @@ $('.enviar-orcamento').on('click', function () {
         $('.enviar-itens').delay(300).slideDown().delay(3000).slideUp();
     } else if ($('.contato-nome').val() === "" || $('.contato-email').val() === "") {
         $('.enviar-complete').delay(300).slideDown().delay(3000).slideUp();
+    } else if($('.form-terms').is(':checked') != true){
+        $('.enviar-terms').delay(300).slideDown().delay(3000).slideUp();
     } else {
         $.ajax({
             type: "POST",
