@@ -44,13 +44,33 @@ block content
                                     tr
                                         th(colspan="2") Total:
                                         th.analysis-price
+                                    tr
+                                        th(colspan="2") Cupon:
+                                        if(info.cupom != "none")
+                                            if(info.cupom == "BeAll2014")
+                                                th #{info.cupom} - R$ 600,00
+                                    tr
+                                        th(colspan="2") Status:
+                                        th
+                                            select#selectStatus
+                                                option #{info.status}
+                                                option Aberto
+                                                option Entrou em Contato
+                                                option Negócio Fechado
+                                                option Pago
+                                                option Entregue
+                                                option Pós Venda
+                                            span.changeStatusOk(style="margin-left:20px;display:none;") OK
+                                            span.changeStatusNotOk(style="margin-left:20px;display:none;") Não Deu
 
-
-                br
-                br
-                a.btn.btn-primary.pull-right(href="/paine",) Voltar
-                br
-                br
-                br
+                            br
+                            br
+                            form#deletarOrcamento
+                                input.btn.btn-primary.btn-filled.pull-right(type="submit", value="Deletar", style="margin-left:20px;", data-idorc="#{info._id}")
+                            span.deleteError.pull-right(style="display:none;") Oops, algo deu errado
+                            a.btn.btn-primary.pull-right(href="/paine",) Voltar
+                            br
+                            br
+                            br
 
     include pageelements/footer	

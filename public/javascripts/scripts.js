@@ -720,6 +720,42 @@ $('#cupom').submit(function () {
 });
 
 
+/* DELETAR ORCAMENTO */
+$('#deletarOrcamento').submit(function () {
+    var id = {id: $(this).find('input').attr('data-idorc') }
+    
+    $.ajax({
+        type: 'POST',
+        url: '/deleteOrcamento',
+        data: id
+    }).done(function (data) {
+        if (data == "OK") {
+            window.location.replace("http://www.bonsaits.com/painel");
+        } else {
+            $('.deleteError').show();
+        }
+    });
+
+    return false;
+});
+
+/* TROCAR STATUS */
+$('#selectStatus').on('change', function () {
+    var status = {status: $(this).find('option:selected').text(), id: $('#deletarOrcamento').find('input').attr('data-idorc')}
+    
+    $.ajax({
+        type: 'POST',
+        url: '/changeStatus',
+        data: status
+    }).done(function (data) {
+        if (data == "OK") {
+            $('.changeStatusOk').fadeIn().delay(500).fadeOut();
+        } else {
+            $('.changeStatusNotOk').fadeIn().delay(500).fadeOut();
+        }
+    });
+});
+
 
 $(document).on('change', '.calc-total span', function () {
     alert('bla')

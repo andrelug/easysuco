@@ -180,14 +180,46 @@ module.exports = function (app, passport, mongoose) {
             res.redirect('/');
         } else {
             Orcamento.findOne({ _id: req.params.id }).exec(function (err, docs) {
-               // console.log(docs);
+                // console.log(docs);
                 getProducts(docs);
-               // console.log(docs);
+                // console.log(docs);
                 res.render('orcamento', { title: "Orçamento Análise", user: user, info: docs });
             });
         }
     });
 
+    // ORÇAMENTO DELETE
+    app.post('/deleteOrcamento', function (req, res) {
+        var user = req.user;
+        var id = req.body.id;
+
+        if (!user || user.status != 'admin') {
+            res.redirect('/');
+        } else {
+            Orcamento.remove({ _id: id }, function (err) {
+                if (err)
+                    throw err
+                res.send("OK");
+            });
+        }
+    });
+
+    // CHANGE STATUS
+    app.post('/changeStatus', function (req, res) {
+        var user = req.user;
+        var status = req.body.status;
+        var id = req.body.id;
+
+        if (!user || user.status != 'admin') {
+            res.redirect('/');
+        } else {
+            Orcamento.update({ _id: id }, {$set: {status: status}}, function (err) {
+                if (err)
+                    throw err
+                res.send("OK");
+            });
+        }
+    });
 
     // ORÇAMENTO
     app.post('/orcamento', function (req, res) {
@@ -195,7 +227,6 @@ module.exports = function (app, passport, mongoose) {
         var str = req.body.str;
         var itens = [];
         var quantidade = [];
-        console.log(str);
 
         for (i = 0; i < str.length; i++) {
             itens.push(str[i].item);

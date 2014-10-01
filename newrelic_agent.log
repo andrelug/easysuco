@@ -382,3 +382,106 @@
 {"name":"newrelic","hostname":"Drubz","pid":9396,"level":30,"msg":"Starting New Relic for Node.js connection process.","time":"2014-10-01T03:39:21.893Z","v":0}
 {"name":"newrelic","hostname":"Drubz","pid":9396,"component":"new_relic_response","level":30,"msg":"Reporting to: https://rpm.newrelic.com/accounts/780278/applications/5350917","time":"2014-10-01T03:39:24.847Z","v":0}
 {"name":"newrelic","hostname":"Drubz","pid":9396,"component":"collector_api","level":30,"msg":"Connected to collector-115.newrelic.com:443 with agent run ID 833795604.","time":"2014-10-01T03:39:24.847Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":11020,"level":30,"msg":"Starting New Relic for Node.js connection process.","time":"2014-10-01T17:22:41.705Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":9128,"level":30,"msg":"Starting New Relic for Node.js connection process.","time":"2014-10-01T17:22:47.151Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":11224,"level":30,"msg":"Starting New Relic for Node.js connection process.","time":"2014-10-01T17:33:17.995Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":5888,"level":30,"msg":"Starting New Relic for Node.js connection process.","time":"2014-10-01T17:33:20.071Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":7444,"level":30,"msg":"Starting New Relic for Node.js connection process.","time":"2014-10-01T17:33:29.221Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":7444,"component":"new_relic_response","level":30,"msg":"Reporting to: https://rpm.newrelic.com/accounts/780278/applications/5350917","time":"2014-10-01T17:33:32.021Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":7444,"component":"collector_api","level":30,"msg":"Connected to collector-115.newrelic.com:443 with agent run ID 835302900.","time":"2014-10-01T17:33:32.022Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":10576,"level":30,"msg":"Starting New Relic for Node.js connection process.","time":"2014-10-01T17:35:41.317Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":10576,"component":"new_relic_response","level":30,"msg":"Reporting to: https://rpm.newrelic.com/accounts/780278/applications/5350917","time":"2014-10-01T17:35:43.797Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":10576,"component":"collector_api","level":30,"msg":"Connected to collector-115.newrelic.com:443 with agent run ID 835307377.","time":"2014-10-01T17:35:43.797Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":1100,"level":30,"msg":"Starting New Relic for Node.js connection process.","time":"2014-10-01T17:36:40.043Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":1100,"component":"new_relic_response","level":30,"msg":"Reporting to: https://rpm.newrelic.com/accounts/780278/applications/5350917","time":"2014-10-01T17:36:42.423Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":1100,"component":"collector_api","level":30,"msg":"Connected to collector-115.newrelic.com:443 with agent run ID 835309272.","time":"2014-10-01T17:36:42.423Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":9452,"level":30,"msg":"Starting New Relic for Node.js connection process.","time":"2014-10-01T17:36:52.083Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":9452,"component":"new_relic_response","level":30,"msg":"Reporting to: https://rpm.newrelic.com/accounts/780278/applications/5350917","time":"2014-10-01T17:36:54.491Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":9452,"component":"collector_api","level":30,"msg":"Connected to collector-115.newrelic.com:443 with agent run ID 835309681.","time":"2014-10-01T17:36:54.491Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":10724,"level":30,"msg":"Starting New Relic for Node.js connection process.","time":"2014-10-01T17:37:02.690Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":10724,"component":"new_relic_response","level":30,"msg":"Reporting to: https://rpm.newrelic.com/accounts/780278/applications/5350917","time":"2014-10-01T17:37:05.231Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":10724,"component":"collector_api","level":30,"msg":"Connected to collector-115.newrelic.com:443 with agent run ID 835310047.","time":"2014-10-01T17:37:05.231Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":12780,"level":30,"msg":"Starting New Relic for Node.js connection process.","time":"2014-10-01T17:37:11.425Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":12780,"component":"new_relic_response","level":30,"msg":"Reporting to: https://rpm.newrelic.com/accounts/780278/applications/5350917","time":"2014-10-01T17:37:13.933Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":12780,"component":"collector_api","level":30,"msg":"Connected to collector-115.newrelic.com:443 with agent run ID 835310365.","time":"2014-10-01T17:37:13.934Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":8084,"level":30,"msg":"Starting New Relic for Node.js connection process.","time":"2014-10-01T17:37:36.946Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":8084,"component":"new_relic_response","level":30,"msg":"Reporting to: https://rpm.newrelic.com/accounts/780278/applications/5350917","time":"2014-10-01T17:37:39.482Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":8084,"component":"collector_api","level":30,"msg":"Connected to collector-115.newrelic.com:443 with agent run ID 835311157.","time":"2014-10-01T17:37:39.482Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":12516,"level":30,"msg":"Starting New Relic for Node.js connection process.","time":"2014-10-01T17:37:52.257Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":12516,"component":"new_relic_response","level":30,"msg":"Reporting to: https://rpm.newrelic.com/accounts/780278/applications/5350917","time":"2014-10-01T17:37:54.760Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":12516,"component":"collector_api","level":30,"msg":"Connected to collector-115.newrelic.com:443 with agent run ID 835311666.","time":"2014-10-01T17:37:54.760Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":6772,"level":30,"msg":"Starting New Relic for Node.js connection process.","time":"2014-10-01T17:38:40.193Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":6772,"component":"new_relic_response","level":30,"msg":"Reporting to: https://rpm.newrelic.com/accounts/780278/applications/5350917","time":"2014-10-01T17:38:42.745Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":6772,"component":"collector_api","level":30,"msg":"Connected to collector-115.newrelic.com:443 with agent run ID 835313393.","time":"2014-10-01T17:38:42.745Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":1268,"level":30,"msg":"Starting New Relic for Node.js connection process.","time":"2014-10-01T17:38:59.879Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":1268,"component":"new_relic_response","level":30,"msg":"Reporting to: https://rpm.newrelic.com/accounts/780278/applications/5350917","time":"2014-10-01T17:39:02.423Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":1268,"component":"collector_api","level":30,"msg":"Connected to collector-115.newrelic.com:443 with agent run ID 835314022.","time":"2014-10-01T17:39:02.423Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":7772,"level":30,"msg":"Starting New Relic for Node.js connection process.","time":"2014-10-01T17:40:09.408Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":7772,"component":"new_relic_response","level":30,"msg":"Reporting to: https://rpm.newrelic.com/accounts/780278/applications/5350917","time":"2014-10-01T17:40:11.812Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":7772,"component":"collector_api","level":30,"msg":"Connected to collector-115.newrelic.com:443 with agent run ID 835316540.","time":"2014-10-01T17:40:11.812Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":11792,"level":30,"msg":"Starting New Relic for Node.js connection process.","time":"2014-10-01T17:40:15.595Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":11792,"component":"new_relic_response","level":30,"msg":"Reporting to: https://rpm.newrelic.com/accounts/780278/applications/5350917","time":"2014-10-01T17:40:18.099Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":11792,"component":"collector_api","level":30,"msg":"Connected to collector-115.newrelic.com:443 with agent run ID 835316890.","time":"2014-10-01T17:40:18.099Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":12116,"level":30,"msg":"Starting New Relic for Node.js connection process.","time":"2014-10-01T17:41:15.911Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":12116,"component":"new_relic_response","level":30,"msg":"Reporting to: https://rpm.newrelic.com/accounts/780278/applications/5350917","time":"2014-10-01T17:41:18.285Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":12116,"component":"collector_api","level":30,"msg":"Connected to collector-115.newrelic.com:443 with agent run ID 835319001.","time":"2014-10-01T17:41:18.285Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":13088,"level":30,"msg":"Starting New Relic for Node.js connection process.","time":"2014-10-01T17:42:28.484Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":13088,"component":"new_relic_response","level":30,"msg":"Reporting to: https://rpm.newrelic.com/accounts/780278/applications/5350917","time":"2014-10-01T17:42:31.250Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":13088,"component":"collector_api","level":30,"msg":"Connected to collector-115.newrelic.com:443 with agent run ID 835321250.","time":"2014-10-01T17:42:31.250Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":10276,"level":30,"msg":"Starting New Relic for Node.js connection process.","time":"2014-10-01T17:42:35.049Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":10276,"component":"new_relic_response","level":30,"msg":"Reporting to: https://rpm.newrelic.com/accounts/780278/applications/5350917","time":"2014-10-01T17:42:37.558Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":10276,"component":"collector_api","level":30,"msg":"Connected to collector-115.newrelic.com:443 with agent run ID 835321438.","time":"2014-10-01T17:42:37.559Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":9768,"level":30,"msg":"Starting New Relic for Node.js connection process.","time":"2014-10-01T17:43:47.953Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":9768,"component":"new_relic_response","level":30,"msg":"Reporting to: https://rpm.newrelic.com/accounts/780278/applications/5350917","time":"2014-10-01T17:43:50.456Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":9768,"component":"collector_api","level":30,"msg":"Connected to collector-115.newrelic.com:443 with agent run ID 835323862.","time":"2014-10-01T17:43:50.456Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":7352,"level":30,"msg":"Starting New Relic for Node.js connection process.","time":"2014-10-01T17:43:53.146Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":7352,"component":"new_relic_response","level":30,"msg":"Reporting to: https://rpm.newrelic.com/accounts/780278/applications/5350917","time":"2014-10-01T17:43:55.653Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":7352,"component":"collector_api","level":30,"msg":"Connected to collector-115.newrelic.com:443 with agent run ID 835324034.","time":"2014-10-01T17:43:55.653Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":10796,"level":30,"msg":"Starting New Relic for Node.js connection process.","time":"2014-10-01T17:44:02.980Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":10796,"component":"new_relic_response","level":30,"msg":"Reporting to: https://rpm.newrelic.com/accounts/780278/applications/5350917","time":"2014-10-01T17:44:05.493Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":10796,"component":"collector_api","level":30,"msg":"Connected to collector-115.newrelic.com:443 with agent run ID 835324312.","time":"2014-10-01T17:44:05.493Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":11320,"level":30,"msg":"Starting New Relic for Node.js connection process.","time":"2014-10-01T17:44:17.566Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":11320,"component":"new_relic_response","level":30,"msg":"Reporting to: https://rpm.newrelic.com/accounts/780278/applications/5350917","time":"2014-10-01T17:44:20.111Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":11320,"component":"collector_api","level":30,"msg":"Connected to collector-115.newrelic.com:443 with agent run ID 835324907.","time":"2014-10-01T17:44:20.111Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":4556,"level":30,"msg":"Starting New Relic for Node.js connection process.","time":"2014-10-01T17:44:29.421Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":4556,"component":"new_relic_response","level":30,"msg":"Reporting to: https://rpm.newrelic.com/accounts/780278/applications/5350917","time":"2014-10-01T17:44:31.923Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":4556,"component":"collector_api","level":30,"msg":"Connected to collector-115.newrelic.com:443 with agent run ID 835325281.","time":"2014-10-01T17:44:31.923Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":8712,"level":30,"msg":"Starting New Relic for Node.js connection process.","time":"2014-10-01T17:49:25.379Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":8712,"component":"new_relic_response","level":30,"msg":"Reporting to: https://rpm.newrelic.com/accounts/780278/applications/5350917","time":"2014-10-01T17:49:27.992Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":8712,"component":"collector_api","level":30,"msg":"Connected to collector-115.newrelic.com:443 with agent run ID 835335903.","time":"2014-10-01T17:49:27.992Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":10236,"level":30,"msg":"Starting New Relic for Node.js connection process.","time":"2014-10-01T17:49:37.691Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":10236,"component":"new_relic_response","level":30,"msg":"Reporting to: https://rpm.newrelic.com/accounts/780278/applications/5350917","time":"2014-10-01T17:49:40.153Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":10236,"component":"collector_api","level":30,"msg":"Connected to collector-115.newrelic.com:443 with agent run ID 835336256.","time":"2014-10-01T17:49:40.153Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":8072,"level":30,"msg":"Starting New Relic for Node.js connection process.","time":"2014-10-01T17:49:51.456Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":8072,"component":"new_relic_response","level":30,"msg":"Reporting to: https://rpm.newrelic.com/accounts/780278/applications/5350917","time":"2014-10-01T17:49:54.676Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":8072,"component":"collector_api","level":30,"msg":"Connected to collector-115.newrelic.com:443 with agent run ID 835336698.","time":"2014-10-01T17:49:54.677Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":11500,"level":30,"msg":"Starting New Relic for Node.js connection process.","time":"2014-10-01T17:50:19.502Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":11500,"component":"new_relic_response","level":30,"msg":"Reporting to: https://rpm.newrelic.com/accounts/780278/applications/5350917","time":"2014-10-01T17:50:22.034Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":11500,"component":"collector_api","level":30,"msg":"Connected to collector-115.newrelic.com:443 with agent run ID 835337928.","time":"2014-10-01T17:50:22.034Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":1344,"level":30,"msg":"Starting New Relic for Node.js connection process.","time":"2014-10-01T17:53:59.674Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":1344,"component":"new_relic_response","level":30,"msg":"Reporting to: https://rpm.newrelic.com/accounts/780278/applications/5350917","time":"2014-10-01T17:54:02.402Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":1344,"component":"collector_api","level":30,"msg":"Connected to collector-115.newrelic.com:443 with agent run ID 835345041.","time":"2014-10-01T17:54:02.403Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":10868,"level":30,"msg":"Starting New Relic for Node.js connection process.","time":"2014-10-01T17:55:42.219Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":10868,"component":"new_relic_response","level":30,"msg":"Reporting to: https://rpm.newrelic.com/accounts/780278/applications/5350917","time":"2014-10-01T17:55:45.015Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":10868,"component":"collector_api","level":30,"msg":"Connected to collector-115.newrelic.com:443 with agent run ID 835348565.","time":"2014-10-01T17:55:45.015Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":13212,"level":30,"msg":"Starting New Relic for Node.js connection process.","time":"2014-10-01T17:57:18.897Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":13212,"component":"new_relic_response","level":30,"msg":"Reporting to: https://rpm.newrelic.com/accounts/780278/applications/5350917","time":"2014-10-01T17:57:21.505Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":13212,"component":"collector_api","level":30,"msg":"Connected to collector-115.newrelic.com:443 with agent run ID 835351976.","time":"2014-10-01T17:57:21.505Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":13284,"level":30,"msg":"Starting New Relic for Node.js connection process.","time":"2014-10-01T18:01:03.468Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":13284,"component":"new_relic_response","level":30,"msg":"Reporting to: https://rpm.newrelic.com/accounts/780278/applications/5350917","time":"2014-10-01T18:01:06.078Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":13284,"component":"collector_api","level":30,"msg":"Connected to collector-115.newrelic.com:443 with agent run ID 835361064.","time":"2014-10-01T18:01:06.079Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":11140,"level":30,"msg":"Starting New Relic for Node.js connection process.","time":"2014-10-01T18:01:42.800Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":11140,"component":"new_relic_response","level":30,"msg":"Reporting to: https://rpm.newrelic.com/accounts/780278/applications/5350917","time":"2014-10-01T18:01:45.222Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":11140,"component":"collector_api","level":30,"msg":"Connected to collector-115.newrelic.com:443 with agent run ID 835362460.","time":"2014-10-01T18:01:45.223Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":2884,"level":30,"msg":"Starting New Relic for Node.js connection process.","time":"2014-10-01T18:02:06.302Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":2884,"component":"new_relic_response","level":30,"msg":"Reporting to: https://rpm.newrelic.com/accounts/780278/applications/5350917","time":"2014-10-01T18:02:09.000Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":2884,"component":"collector_api","level":30,"msg":"Connected to collector-115.newrelic.com:443 with agent run ID 835363437.","time":"2014-10-01T18:02:09.000Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":10276,"level":30,"msg":"Starting New Relic for Node.js connection process.","time":"2014-10-01T18:03:05.883Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":10276,"component":"new_relic_response","level":30,"msg":"Reporting to: https://rpm.newrelic.com/accounts/780278/applications/5350917","time":"2014-10-01T18:03:08.903Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":10276,"component":"collector_api","level":30,"msg":"Connected to collector-115.newrelic.com:443 with agent run ID 835365430.","time":"2014-10-01T18:03:08.904Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":2308,"level":30,"msg":"Starting New Relic for Node.js connection process.","time":"2014-10-01T18:05:08.348Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":2308,"component":"new_relic_response","level":30,"msg":"Reporting to: https://rpm.newrelic.com/accounts/780278/applications/5350917","time":"2014-10-01T18:05:26.669Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":2308,"component":"collector_api","level":30,"msg":"Connected to collector-115.newrelic.com:443 with agent run ID 835370678.","time":"2014-10-01T18:05:26.670Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":11784,"level":30,"msg":"Starting New Relic for Node.js connection process.","time":"2014-10-01T18:27:19.861Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":11784,"component":"new_relic_response","level":30,"msg":"Reporting to: https://rpm.newrelic.com/accounts/780278/applications/5350917","time":"2014-10-01T18:27:22.391Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":11784,"component":"collector_api","level":30,"msg":"Connected to collector-115.newrelic.com:443 with agent run ID 835419185.","time":"2014-10-01T18:27:22.391Z","v":0}

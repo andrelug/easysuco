@@ -24,9 +24,11 @@ block content
             div.container
                 div.row
                     div.col-sm-12
-                        h1.center-block Painel
+                        br
+                        h2 Olá #{user.name.first}
+                        br
+                        br
                         if(user.status == 'admin')
-                            h2 Olá André
                             table.table.table-striped
                                 thead
                                     tr
