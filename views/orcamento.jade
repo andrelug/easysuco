@@ -55,6 +55,9 @@ block content
                                             select#selectStatus
                                                 option #{info.status}
                                                 option Aberto
+                                                option Info
+                                                option Lead
+                                                option Orcamento
                                                 option Entrou em Contato
                                                 option Negócio Fechado
                                                 option Pago
@@ -68,7 +71,7 @@ block content
                             form#deletarOrcamento
                                 input.btn.btn-primary.btn-filled.pull-right(type="submit", value="Deletar", style="margin-left:20px;", data-idorc="#{info._id}")
                             span.deleteError.pull-right(style="display:none;") Oops, algo deu errado
-                            a.btn.btn-primary.pull-right(href="/paine",) Voltar
+                            a.btn.btn-primary.pull-right(href="/painel",) Voltar
                             br
                             br
                             br

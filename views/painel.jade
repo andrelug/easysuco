@@ -27,6 +27,10 @@ block content
                         br
                         h2 Olá #{user.name.first}
                         br
+                        if(user.status == 'admin')
+                            a.btn.btn-filled.btn-primary(href="/contatos", style="float: right;") Contatos
+                        br
+                        br
                         br
                         if(user.status == 'admin')
                             table.table.table-striped

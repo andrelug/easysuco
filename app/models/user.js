@@ -15,9 +15,10 @@ var UserSchema = new mongoose.Schema({
     email: {type: String},
     gender: String,
     site: String,
+    message: String,
+    orcamento: String,
     bio: String,
     photo: String,
-    cover: {type: String, default: "background: url(https://s3-sa-east-1.amazonaws.com/portalgueime/images/profileBg.jpg) no-repeat center 0px;"},
     password: {
         main: String
     },

@@ -1357,18 +1357,30 @@ img.phone-portrait {
   background-color: #fc4349;
   color: #fff;
 }
-.background-image-holder {
+.background-image-holder,
+.foreground-image-holder {
   position: absolute;
   top: 0px;
-  height: 100%;
+  left: 0px;
   width: 100%;
+  height: 100%;
   background-size: cover !important;
   z-index: 0;
   background-position: 50% 50% !important;
 }
-.parallax-background {
+.background-image-holder.parallax-background {
   height: 120%;
   top: -10%;
+}
+.hover-background .background-image-holder,
+.hover-background .foreground-image-holder {
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+}
+.hover-background .background-image-holder {
+  height: 110%;
+  width: 110%;
 }
 .side-image {
   padding: 0px;
@@ -3355,10 +3367,10 @@ footer.short-2 .contact-action:hover {
   opacity: 0;
   max-height: 0px;
 }
-.expanding-ul li:hover .title {
+.expanding-ul li.active .title {
   margin-bottom: 24px;
 }
-.expanding-ul li:hover .text-content {
+.expanding-ul li.active .text-content {
   max-height: 800px;
   opacity: 1;
 }
@@ -4016,5 +4028,114 @@ footer.short-2 .contact-action:hover {
     background: none;
     padding: 0;
     margin-top: 0;
+  }
+}
+.elements h1 {
+  margin-bottom: 16px;
+}
+.pagination li a {
+  color: #6dbcdb;
+  background: none;
+  margin-left: 12px;
+  border-radius: 50%;
+  padding: 5px 12px;
+}
+.pagination li.active {
+  background: #6dbcdb;
+}
+.pagination li:first-child a,
+.pagination li:last-child a {
+  border-radius: 50% !important;
+}
+.pagination-lg li a {
+  padding: 7px 16px;
+}
+.pagination-sm li a {
+  padding: 5px 11px;
+}
+.pager li a {
+  background: none;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  transition: all .3s ease;
+  min-width: 155px;
+  border-radius: 25px;
+  display: inline-block;
+  padding: 14px 28px 13px 28px;
+  line-height: 1;
+  border: 2px solid #6dbcdb;
+  font-family: "Raleway", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #6dbcdb;
+  min-width: 125px;
+}
+.pager li a:hover {
+  background: #6dbcdb;
+  color: #fff;
+}
+.video-wrapper iframe {
+  width: 100%;
+  height: 180%;
+  top: -40%;
+  position: absolute;
+}
+.youtube-bg {
+  height: 100%;
+}
+@media all and (min-width: 1800px) {
+  .video-wrapper iframe {
+    height: 200%;
+    top: -50%;
+  }
+}
+@media all and (max-width: 1500px) {
+  .video-wrapper iframe {
+    height: 150%;
+    top: -15%;
+  }
+}
+@media all and (max-width: 1300px) {
+  .video-wrapper iframe {
+    height: 130%;
+    top: -5%;
+  }
+}
+@media all and (max-width: 1250px) {
+  .video-wrapper iframe {
+    height: 120%;
+    top: -5%;
+  }
+}
+@media all and (max-width: 1100px) {
+  .video-wrapper iframe {
+    height: 110%;
+    top: -5%;
+  }
+}
+@media all and (max-width: 1024px) {
+  .video-wrapper iframe {
+    display: none;
+  }
+}
+.fullwidth-video iframe {
+  height: 550px;
+}
+@media all and (max-width: 1200px) {
+  .fullwidth-video iframe {
+    height: 500px;
+  }
+}
+@media all and (max-width: 1000px) {
+  .fullwidth-video iframe {
+    height: 400px;
+  }
+}
+@media all and (max-width: 767px) {
+  .fullwidth-video iframe {
+    height: 270px;
+    max-width: 100%;
   }
 }

@@ -137,10 +137,11 @@ block content
                     form.mail-list-signup
                         div.col-sm-9.col-xs-12.pull-left.clear-fix
                             h3.text-white.pull-left <span>Saiba tudo sobre WebSites:&nbsp;</span>
-                            input.signup-email-field.validate-required.validate-email(type="text", placeholder="Adicione seu e-mail aqui")
-
+                            input.signup-email-field.validate-required.validate-email(type="text", placeholder="Adicione seu e-mail aqui", name="email")
+                            span.enviar-confirm.text-white(style="font-size:14pt;float:right;background:none;padding:0;") Obrigado!!
+                            span.enviar-error.text-white(style="font-size:14pt;float:right;background:none;padding:0;") Oops...algo deu errado!!
                         div.col-sm-3.col-xs12.pull-right.text-right
-                            input.btn.btn-primary.btn-filled(type="submit", value="Inscrever")
+                            input.btn.btn-primary.btn-filled(type="submit", value="Inscrever", style="outline:none;")
 
         a#orcamento.in-page-link
 
