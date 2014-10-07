@@ -1,5 +1,6 @@
 var Users = require('./models/user'),
     Orcamento = require('./models/orcamento'),
+    Article = require('./models/article'),
     func = require('../config/functions'),
     facebook = require('../config/facebook.js'),
     ip = require('ip'),
@@ -220,6 +221,209 @@ module.exports = function (app, passport, mongoose) {
                     throw err
                 res.send("OK");
             });
+        }
+    });
+
+    // BLOG ALL
+    app.get('/blog', function (req, res) {
+        var user = req.user;
+
+        Article.find({ status: 'publicado' }).exec(function (err, docs) {
+            for (i = 0; i < docs.length; i++) {
+                var timeStamp = docs[i]._id.toString().substring(0, 8);
+                var date = new Date(parseInt(timeStamp, 16) * 1000);
+                docs[i].date = date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear();
+            }
+            res.render('blog', { title: "Bonsaits - Blog", user: user, info: docs });
+        });
+        
+    });
+
+    //BLOG SINGLE
+    app.get('/blog/:nome', function (req, res) {
+        var user = req.user;
+
+        Article.find({ slug: req.params.nome }).exec(function (err, docs) {
+            console.log(docs);
+            res.render('blogSingle', { title: "Bonsaits - " + docs[0].title, user: user, info: docs[0] });
+        });
+    });
+
+    // BLOG NEW
+    app.get('/blog/criar/:type', function (req, res) {
+        var user = req.user;
+
+        if (!user || user.status != 'admin') {
+            res.redirect('/');
+        } else {
+            new Article({
+                'author.name': user.name.first + " " + user.name.last,
+                type: req.params.type
+            }).save(function (err, docs) {
+                if (err) throw err
+
+                res.render('novo', { title: "Novo Post", user: user, id: docs._id, type: req.params.type, edit: false });
+            });
+        }
+    });
+
+    // UPLOAD DE IMAGENS DURANTE A CRIAÇÃO DE ARTIGOS
+    app.post('/artigoImage', function (req, res, next) {
+        var user = req.user;
+
+        var sendImg = req.files.file.name;
+
+        if (user.status == 'admin') {
+            // get the temporary location of the file
+            var tmp_path = req.files.file.path;
+            // set where the file should actually exists - in this case it is in the "images" directory
+            var target_path = './public/uploads/' + sendImg;
+            // move the file from the temporary location to the intended location
+            fs.rename(tmp_path, target_path, function (err) {
+                if (err) throw err;
+                // delete the temporary file, so that the explicitly set temporary upload dir does not get filled with unwanted files
+                fs.unlink(tmp_path, function () {
+                    if (err) throw err;
+
+                    res.send(sendImg);
+                });
+            });
+
+        }
+
+    });
+
+
+
+    // SALVAR NOVO ARTIGO
+    app.post('/novoArtigo/:id', function (req, res) {
+        var user = req.user;
+        var id = req.params.id;
+
+        if (user.status == 'admin') {
+
+            Article.update({ _id: id }, { $set: { text: req.body.content} }, function (err) {
+                if (err)
+                    throw err
+                res.send(JSON.stringify(req.body));
+            });
+        } else {
+            res.redirect('/parceiros');
+        }
+    });
+
+    // SALVAR NOVO TITULO
+    app.post('/novoTitulo/:id', function (req, res) {
+        var user = req.user;
+        var id = req.params.id;
+
+        if (user.status == 'admin') {
+
+            Article.update({ _id: id }, { $set: { title: decodeURIComponent(req.body.content).replace('<p>', '').replace('</p>', '')} }, function (err) {
+                if (err)
+                    throw err
+                res.send(decodeURIComponent(req.body.content).replace('<p>', '').replace('</p>', ''));
+            });
+
+        } else {
+            res.redirect('/parceiros');
+        }
+    });
+
+    // SALVAR COVER IMAGE
+    app.post('/coverImage', function (req, res) {
+        var user = req.user;
+
+        var sendImg = req.files.file.name;
+
+        if (user.status == 'admin') {
+            // get the temporary location of the file
+            var tmp_path = req.files.file.path;
+            // set where the file should actually exists - in this case it is in the "images" directory
+            var target_path = './public/uploads/' + sendImg;
+            // move the file from the temporary location to the intended location
+            fs.rename(tmp_path, target_path, function (err) {
+                if (err) throw err;
+                // delete the temporary file, so that the explicitly set temporary upload dir does not get filled with unwanted files
+                fs.unlink(tmp_path, function () {
+                    if (err) throw err;
+
+                    res.send(sendImg);
+                });
+            });
+
+        }
+
+    });
+
+
+    // PUBLICAR ARTIGO
+    app.post('/novoArtigo', function (req, res) {
+        var user = req.user,
+			type = req.body.type,
+			tags = req.body.tags,
+			id = req.body.id,
+			cover = req.body.cover,
+			subtitle = req.body.subtitle,
+			slug = func.string_to_slug(req.body.title);
+
+        console.log(req.body.title);
+
+        if (!user.status == 'admin') {
+            res.redirect('/');
+        } else {
+            if (type == 'artigo') {
+                var description = req.body.description;
+
+                Article.update({ _id: id }, { $set: {
+                    status: 'publicado',
+                    tags: tags,
+                    subtitle: subtitle,
+                    slug: slug,
+                    cover: cover,
+                    description: description
+                }
+                }, function (err) {
+                    if (err)
+                        throw err
+                    res.redirect('/blog/' + slug);
+                });
+            } else if (type == 'headline') {
+                var headline = req.body.headline;
+
+                Article.update({ _id: id }, { $set: {
+                    status: 'publicado',
+                    tags: tags,
+                    subtitle: subtitle,
+                    slug: slug,
+                    cover: cover,
+                    headline: headline
+                }
+                }, function (err) {
+                    if (err)
+                        throw err
+                    res.redirect('/blog/' + slug);
+                });
+            } else if (type == 'link') {
+                var link = req.body.link,
+					description = req.body.description;
+
+                Article.update({ _id: id }, { $set: {
+                    status: 'publicado',
+                    tags: tags,
+                    subtitle: subtitle,
+                    slug: slug,
+                    cover: cover,
+                    description: description,
+                    link: link
+                }
+                }, function (err) {
+                    if (err)
+                        throw err
+                    res.redirect('/blog/' + slug);
+                });
+
+            }
         }
     });
 

@@ -1,0 +1,58 @@
+extends partials/layout
+
+block content
+    div.loader
+        div.spinner
+            div.double-bounce1
+            div.double-bounce2
+
+    include pageelements/headerOverlay
+
+    div.main-container
+        header.title
+            div.background-image-holder
+                img.background-image(alt="Imagem de fundo", src="/uploads/#{info.cover}")
+            div.container.align-bottom
+                div.row
+                    div.col-xs-12
+                        h1.text-white #{info.title}
+                        span.sub.alt-font.text-white 13/10/2014 - Leia em #{info.subtitle} minutos
+
+    
+        section.article-single
+            div.container
+                div.row
+                    div.col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1
+                        div.article-body
+                            #{info.text}
+
+                            div.fb-like(data-href="", data-share="true", data-width="450", data-show-faces="true")
+
+                div.row
+                    div.col-md-6.col-md-offset-3.col-sm-8.col-sm-offset-2
+                        div.author-details
+                            img(alt="Autor", src="img/andre.png")
+                            h5 #{info.author.name}
+                            p fdslkj afslçkd jfçlkasdjf lçkajsdflçjd alçkfj laçksjflkasj flçasjflçkasjf dlsaçkj
+                            ul.social-icons
+                                li
+                                    a(href="http://www.facebook.com/andrelug")
+                                        <i class="icon social_facebook"></i>
+                                li
+                                    a(href="http://www.twitter.com/andrelug_")
+                                        <i class="icon social_twitter"></i>
+                                li
+                                    a(href="https://www.linkedin.com/in/andrelug")
+                                        <i class="icon social_linkedin icon-large"></i>
+
+
+                div.row
+                    div.col-md-8.col-md-offset-2.col-sm-8.col-sm-offset-2
+                        div.fb-comments(data-href="", data-colorscheme="light", data-numposts="10", data-width="100%")
+
+
+
+    include pageelements/footer
+    script
+        facebookLikes.attr("data-href", window.location.href);
+        facebookComments.attr("data-href", window.location.href);

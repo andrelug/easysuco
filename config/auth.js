@@ -8,19 +8,19 @@ if('development' == app.get('env')) {
 	    'facebookAuth' : {
 		    'clientID' 		: '1519238171626381', // your App ID
 		    'clientSecret' 	: '5c99dddcfef93210d4b2101c5c196d07', // your App Secret
-		    'callbackURL' 	: 'http://localhost:60428/auth/facebook/callback'
+		    'callbackURL' 	: 'http://localhost:3000/auth/facebook/callback'
 	    },
 
 	    'twitterAuth' : {
 		    'consumerKey' 		: 'd7Nm9kGmddTbp8bVPd3IRWpAq',
 		    'consumerSecret' 	: 'x2FJbmrix0HaHd0HXWpw5mLVbRvmalCnWLc83bxv481KMd9QeL',
-		    'callbackURL' 		: 'http://localhost:24279/auth/twitter/callback'
+		    'callbackURL' 		: 'http://localhost:3000/auth/twitter/callback'
 	    },
 
 	    'googleAuth' : {
 		    'clientID' 		: '255367409904.apps.googleusercontent.com',
 		    'clientSecret' 	: '99dda7gFKNaONJL6rg23odNZ',
-		    'callbackURL' 	: 'http://localhost:24279/auth/google/callback'
+		    'callbackURL' 	: 'http://localhost:3000/auth/google/callback'
 	    }
 
     };

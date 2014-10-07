@@ -1,0 +1,43 @@
+div.nav-container
+    nav.top-bar.overlay-bar
+        div.container
+            div.row.utility-menu
+                div.col-sm-12
+                    div.utility-inner.clearfix
+                        span.alt-font
+                            i.icon.icon_pin 
+                            | belo horizonte, MG - Brasil&nbsp;&nbsp;&nbsp;
+                        span.alt-font
+                            i.icon.icon_mail 
+                            | &nbsp;contato@bonsaits.com
+
+                        div.pull-right
+                            if (!locals.user)
+                                a.btn.btn-primary.login-button.btn-xs(href="entrar") entrar
+                                a.btn.btn-primary.btn-filled.btn-xs(href="registrar") registrar
+                            else
+                                a.btn.btn-primary.login-button.btn-xs(href="painel") painel
+                                a.btn.btn-primary.btn-filled.btn-xs(href="logout") sair
+                            a.language(href="#"): img(src="/images/english.png", alt="English")
+
+            div.row.nav-menu
+                div.col-sm-3.columns.col-md-3
+                    a(href="/")
+                        img.logo.logo-dark(src="/images/bonsaits-logo.png", style="max-width:200px;bottom:27px;")
+                        img.logo.logo-light(src="/images/bonsaits-logo-white.png", style="max-width:200px;bottom:27px;")
+
+                div.col-md-9.col-sm-9.columns
+                    ul.menu
+                        li
+                            a.inner-link(href="/") Início
+                        li
+                            a.inner-link(href="/blog") Blog
+
+                    ul.social-icons.text-right
+                        li
+                            a(href="https://www.twitter.com/bonsaits"): i.icon.social_twitter
+                        li
+                            a(href="https://www.facebook.com/bonsaits"): i.icon.social_facebook
+
+            div.mobile-toggle
+                i.icon.icon_menu

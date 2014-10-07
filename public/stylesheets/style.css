@@ -204,6 +204,9 @@
     top: 45px !important;
     right: -15px !important;
 }
+.zls-btrht .zls-bublemain, .zlsrotate_rht .zls-bublemain{
+    height: 1px !important;
+}
 .bg-gueime{
     background-position:50% 1% !important;
 }

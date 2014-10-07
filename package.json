@@ -31,7 +31,8 @@
     "ip": "*",
     "connect-mongo": "*",
     "node-transloadit": "*",
-    "nodemailer": "*"
+    "nodemailer": "*",
+    "nodemon": "*"
   },
   "noAnalyze": true,
   "license": "Apache",

@@ -1,0 +1,78 @@
+extends partials/layout
+
+block content
+
+    include pageelements/headerOverlay
+
+    div.main-container
+        header.page-header
+            div.background-image-holder.parallax-background
+                div.video-wrapper
+                    video(autoplay="", muted="", loop="")
+                        source(src="/videos/coding.webm", type="video/webm")
+            div.container.align-bottom
+                div.row
+                    div.col-xs-12.text-center
+                        span.text-white.alt-font Bem vindos
+                        h1.text-white Blog Bonsaits
+
+
+        section.blog-masonry.bg-muted
+            div.container
+                div.row
+                    div.col-sm-12.text-center
+                        ul.blog-filters
+                            li.active(data-filter="*")
+                                span Todos
+                            li(data-filter=".artigos")
+                                span Artigos
+                            li(data-filter=".link")
+                                span Interessantes
+                            li(data-filter=".headline")
+                                span Variados
+            div.container
+                div.row
+                    div.blog-masonry-container
+                        for infos in info
+                            if (infos.type == 'artigo')
+                                div.col-md-4.col-sm-6.blog-masonry-item.artigos
+                                    div.item-inner
+                                        a(href="/blog/#{infos.slug}")
+                                            img(alt="Blog bla", src="/uploads/#{infos.cover}")
+                                        div.post-title
+                                            a(href="/blog/#{infos.slug}")
+                                                h2 #{infos.title}
+                                            p #{infos.description}
+
+                                            div.post-meta
+                                                span.sub.alt-font Postado em #{infos.date}
+                                                span.sub.alt-font Leia em #{info.subtitle} minutos
+                                            a.link-text(href="/blog/#{infos.slug}") Leia Mais
+
+
+                            else if(infos.type == 'headline')
+                                div.col-md-4.col-sm-6.blog-masonry-item.headline
+                                    div.item-inner.quote-post
+                                        div.post-title
+                                            a(href="/blog/#{infos.slug}")
+                                                h1 "#{infos.title}"
+
+                                            div.post-meta
+                                                span.sub.alt-font Postado em #{infos.date}
+                                                span.sub.alt-font Leia em #{info.subtitle} minutos
+                                            a.link-text(href="/blog/#{infos.slug}") Leia Mais
+
+                            else
+                                div.col-md-4.col-sm-6.blog-masonry-item.link
+                                    div.item-inner
+                                        #{infos.link}
+                                        div.post-title
+                                            a(href="/blog/#{infos.slug}")
+                                                h2 #{infos.title}
+                                            p #{infos.description}
+                                            div.post-meta
+                                                span.sub.alt-font Postado em 13/10/2014
+                                                span.sub.alt-font Leia em 5 minutos
+                                            a.link-text(href="/blog/#{infos.slug}") Leia Mais
+
+    include pageelements/footer	

@@ -1,0 +1,84 @@
+extends partials/create
+block content
+	include pageelements/header
+
+	div.main-container
+		section.article-single
+			div.container
+				div.row
+					div.col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1
+						div.article-body(style="border:1px solid rgba(0, 0, 0, 0.2);border-radius: 25px;padding:10px")
+							div.dropzone-previews
+							form.dropzone#coverImage(action="/coverImage", enctype="multipart/form-data")
+								div.fallback
+									input(type="file", name="file")
+
+				br
+				br
+				div.row
+					article
+						textarea#createTitle(name="content", placeholder="Ótimo Título")
+							if(edit == true)
+								#{info.title}
+						textarea#createContent(name="content", placeholder="Ótimo Texto")
+							if(edit == true)
+								!{info.text}
+				div.row
+					div.col-md-8.col-md-offset-2
+						if(type == 'artigo')
+							form.form-artigo(action="/novoArtigo", method="POST")
+								div.inputs-wrapper
+									if(edit == false)
+										input(type="text", name="tags", placeholder="Tags separadas por ,")
+										input(type="hidden", name="cover")
+										input(type="text", name="description", placeholder="Descrição")
+										input(type="number", name="subtitle", placeholder="Tempo de leitura", style="border-bottom:none;")
+									else
+										input(type="text", name="tags", placeholder="Tags separadas por ,",value="#{info.tags}")
+										input(type="hidden", name="cover", value="#{info.cover}")
+										input(type="text", name="description", placeholder="Descrição", value="{info.description}")
+										input(type="number", name="subtitle", placeholder="Tempo de leitura", style="border-bottom:none;", value="#{subtitle}")
+									input(type="hidden", name="type", value="artigo")
+									input(type="hidden", name="title")
+									input(type="hidden", name="id", value="#{id}")
+								input(type="submit", value="Enviar")
+						else if( type == 'headline')
+							form.form-artigo(action="/novoArtigo", method="POST")
+								div.inputs-wrapper
+									if(edit == false)
+										input(type="text", name="tags", placeholder="Tags separadas por ,")
+										input(type="hidden", name="cover")
+										input(type="text", name="headline", placeholder="Headline")
+										input(type="number", name="subtitle", placeholder="Tempo de leitura", style="border-bottom:none;")
+									else
+										input(type="text", name="tags", placeholder="Tags separadas por ,",value="#{info.tags}")
+										input(type="hidden", name="cover", value="#{info.cover}")
+										input(type="text", name="description", placeholder="Descrição", value="{info.description}")
+										input(type="number", name="subtitle", placeholder="Tempo de leitura", style="border-bottom:none;", value="#{subtitle}")
+									input(type="hidden", name="type", value="headline")
+									input(type="hidden", name="title")
+									input(type="hidden", name="id", value="#{id}")
+								input(type="submit", value="Enviar")
+						else if (type == 'link')
+							form.form-artigo(action="/novoArtigo", method="POST")
+								div.inputs-wrapper
+									if(edit == false)
+										input(type="text", name="tags", placeholder="Tags separadas por ,")
+										input(type="hidden", name="cover")
+										input(type="text", name="description", placeholder="Descrição")
+										input(type="text", name="link", placeholder="Link")
+										input(type="number", name="subtitle", placeholder="Tempo de leitura", style="border-bottom:none;")
+									else
+										input(type="text", name="tags", placeholder="Tags separadas por ,",value="#{info.tags}")
+										input(type="hidden", name="cover", value="#{info.cover}")
+										input(type="text", name="description", placeholder="Descrição", value="{info.description}")
+										input(type="text", name="link", placeholder="Link - iFrame", value="#{info.link}")
+										input(type="number", name="subtitle", placeholder="Tempo de leitura", style="border-bottom:none;", value="#{subtitle}")
+									input(type="hidden", name="type", value="link")
+									input(type="hidden", name="title")
+									input(type="hidden", name="id", value="#{id}")
+								input(type="submit", value="Enviar")
+
+
+
+	include pageelements/footer

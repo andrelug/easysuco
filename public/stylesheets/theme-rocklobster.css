@@ -2161,17 +2161,17 @@ blockquote {
   font-style: italic;
   font-weight: 300;
 }
-.form-contact .inputs-wrapper {
+.form-contact .inputs-wrapper, .form-artigo .inputs-wrapper {
   border: 2px solid rgba(0, 0, 0, 0.2);
   border-radius: 25px;
   margin-bottom: 24px;
 }
 .form-contact input:focus,
-.form-contact textarea:focus {
+.form-contact textarea:focus, .form-artigo input:focus {
   outline: none;
 }
 .form-contact input,
-.form-contact textarea {
+.form-contact textarea, .form-artigo input {
   background: none;
   border: none;
   box-shadow: none;
@@ -2180,20 +2180,20 @@ blockquote {
   padding: 16px;
 }
 .form-contact input::-moz-placeholder,
-.form-contact textarea::-moz-placeholder {
+.form-contact textarea::-moz-placeholder, .form-artigo input::-moz-placeholder {
   color: #777777;
   opacity: 1;
 }
 .form-contact input:-ms-input-placeholder,
-.form-contact textarea:-ms-input-placeholder {
+.form-contact textarea:-ms-input-placeholder, .form-artigo input:-ms-input-placeholder {
   color: #777777;
 }
 .form-contact input::-webkit-input-placeholder,
-.form-contact textarea::-webkit-input-placeholder {
+.form-contact textarea::-webkit-input-placeholder, .form-artigo input::-webkit-input-placeholder {
   color: #777777;
 }
 .form-contact input input::-webkit-input-placeholder,
-.form-contact textarea input::-webkit-input-placeholder {
+.form-contact textarea input::-webkit-input-placeholder, .form-artigo input input::-webkit-input-placeholder {
   color: #777777;
   font-size: 24px;
   font-weight: 300;
@@ -2212,7 +2212,7 @@ blockquote {
 .form-contact textarea textarea:-moz-placeholder {
   color: #777777;
 }
-.form-contact input {
+.form-contact input, .form-artigo input {
   border-bottom: 2px solid rgba(0, 0, 0, 0.2);
 }
 .form-success,
