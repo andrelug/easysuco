@@ -368,8 +368,33 @@ module.exports = function (app, passport, mongoose) {
     });
 
 
+    // SALVAR COVER IMAGE
+    app.post('/coverImage', function (req, res) {
+        var user = req.user;
 
-    // SALVAR NOVO ARTIGO
+        var sendImg = req.files.file.name;
+
+        if (user.status == 'admin') {
+            // get the temporary location of the file
+            var tmp_path = req.files.file.path;
+            // set where the file should actually exists - in this case it is in the "images" directory
+            var target_path = './public/uploads/' + sendImg;
+            // move the file from the temporary location to the intended location
+            fs.rename(tmp_path, target_path, function (err) {
+                if (err) throw err;
+                // delete the temporary file, so that the explicitly set temporary upload dir does not get filled with unwanted files
+                fs.unlink(tmp_path, function () {
+                    if (err) throw err;
+
+                    res.send(sendImg);
+                });
+            });
+
+        }
+
+    });
+
+        // SALVAR NOVO ARTIGO
     app.post('/novoArtigo/:id', function (req, res) {
         var user = req.user;
         var id = req.params.id;
@@ -402,32 +427,6 @@ module.exports = function (app, passport, mongoose) {
         } else {
             res.redirect('/parceiros');
         }
-    });
-
-    // SALVAR COVER IMAGE
-    app.post('/coverImage', function (req, res) {
-        var user = req.user;
-
-        var sendImg = req.files.file.name;
-
-        if (user.status == 'admin') {
-            // get the temporary location of the file
-            var tmp_path = req.files.file.path;
-            // set where the file should actually exists - in this case it is in the "images" directory
-            var target_path = './public/uploads/' + sendImg;
-            // move the file from the temporary location to the intended location
-            fs.rename(tmp_path, target_path, function (err) {
-                if (err) throw err;
-                // delete the temporary file, so that the explicitly set temporary upload dir does not get filled with unwanted files
-                fs.unlink(tmp_path, function () {
-                    if (err) throw err;
-
-                    res.send(sendImg);
-                });
-            });
-
-        }
-
     });
 
 
