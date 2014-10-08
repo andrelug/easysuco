@@ -37,14 +37,14 @@ app.configure(function () {
     app.use(app.router);
     app.use(require('stylus').middleware(path.join(__dirname, 'public')));
     app.use(express.static(path.join(__dirname, 'public'), {maxAge: 86400000}));
-    /*   app.use(function(req, res) {
+    app.use(function(req, res) {
      res.status(400);
      res.render('404', {title: '404: File Not Found'});
      });
      app.use(function(error, req, res, next) {
      res.status(500);
      res.render('500', {title:'500: Internal Server Error', error: error});
-     }); */
+     });
     app.enable('trust proxy');
 });
 
