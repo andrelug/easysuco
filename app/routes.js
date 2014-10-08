@@ -344,7 +344,7 @@ module.exports = function (app, passport, mongoose) {
     // UPLOAD DE IMAGENS DURANTE A CRIAÇÃO DE ARTIGOS
     app.post('/artigoImage', function (req, res, next) {
         var user = req.user;
-
+        console.log('chegou até aqui 1')
         var sendImg = req.files.file.name;
 
         if (user.status == 'admin') {
@@ -358,7 +358,7 @@ module.exports = function (app, passport, mongoose) {
                 // delete the temporary file, so that the explicitly set temporary upload dir does not get filled with unwanted files
                 fs.unlink(tmp_path, function () {
                     if (err) throw err;
-
+                    console.log('chegou até aqui 2')
                     res.send({ "filelink": "/uploads/" + sendImg });
                 });
             });
@@ -373,7 +373,7 @@ module.exports = function (app, passport, mongoose) {
         var user = req.user;
 
         var sendImg = req.files.file.name;
-
+        console.log('chegou até aqui 3')
         if (user.status == 'admin') {
             // get the temporary location of the file
             var tmp_path = req.files.file.path;
@@ -385,7 +385,7 @@ module.exports = function (app, passport, mongoose) {
                 // delete the temporary file, so that the explicitly set temporary upload dir does not get filled with unwanted files
                 fs.unlink(tmp_path, function () {
                     if (err) throw err;
-
+                    console.log('chegou até aqui 4')
                     res.send(sendImg);
                 });
             });
