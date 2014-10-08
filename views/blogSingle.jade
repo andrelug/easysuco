@@ -1,4 +1,4 @@
-extends partials/layout
+extends partials/articleLayout
 
 block content
     div.loader
@@ -7,7 +7,6 @@ block content
             div.double-bounce2
 
     include pageelements/headerOverlay
-
     div.main-container
         header.title
             div.background-image-holder
@@ -16,6 +15,9 @@ block content
                 div.row
                     div.col-xs-12
                         h1.text-white #{info.title}
+                            if(locals.user && user.status == 'admin')
+                                a.btn.btn-danger.btn-filled.deletarArtigo(href="#", style="background-color: #E74C3C", data-id="#{info.id}") Deletar
+                                a.btn.btn-primary.btn-filled(href="/blog/#{info.id}/editar") Editar
                         span.sub.alt-font.text-white 13/10/2014 - Leia em #{info.subtitle} minutos
 
     
@@ -31,21 +33,22 @@ block content
                 div.row
                     div.col-md-6.col-md-offset-3.col-sm-8.col-sm-offset-2
                         div.author-details
-                            img(alt="Autor", src="img/andre.png")
+                            img(alt="Autor", src="#{author.photo}")
                             h5 #{info.author.name}
-                            p fdslkj afslçkd jfçlkasdjf lçkajsdflçjd alçkfj laçksjflkasj flçasjflçkasjf dlsaçkj
+                            p #{author.bio}
                             ul.social-icons
-                                li
-                                    a(href="http://www.facebook.com/andrelug")
-                                        <i class="icon social_facebook"></i>
-                                li
-                                    a(href="http://www.twitter.com/andrelug_")
-                                        <i class="icon social_twitter"></i>
-                                li
-                                    a(href="https://www.linkedin.com/in/andrelug")
-                                        <i class="icon social_linkedin icon-large"></i>
-
-
+                                if(author.social.facebook.url)
+                                    li
+                                        a(href="#{author.social.facebook.url}",  target="_blank")
+                                            <i class="icon social_facebook"></i>
+                                if(author.social.twitter.url)
+                                    li
+                                        a(href="#{author.social.twitter.url}",  target="_blank")
+                                            <i class="icon social_twitter"></i>
+                                if(author.social.linkedin.url)
+                                    li
+                                        a(href="#{author.social.linkedin.url}",  target="_blank")
+                                            <i class="icon social_linkedin icon-large"></i>
                 div.row
                     div.col-md-8.col-md-offset-2.col-sm-8.col-sm-offset-2
                         div.fb-comments(data-href="", data-colorscheme="light", data-numposts="10", data-width="100%")
@@ -53,6 +56,3 @@ block content
 
 
     include pageelements/footer
-    script
-        facebookLikes.attr("data-href", window.location.href);
-        facebookComments.attr("data-href", window.location.href);

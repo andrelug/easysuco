@@ -224,11 +224,22 @@ module.exports = function (app, passport, mongoose) {
         }
     });
 
+    // PROFILE
+    app.get('/perfil', function (req, res) {
+        var user = req.user;
+
+        if (!user || user.status != 'admin') {
+            res.redirect('/');
+        } else {
+            res.render('profile', { title: "Bonsaits - Editar Perfil", user: user })
+        }
+    });
+
     // BLOG ALL
     app.get('/blog', function (req, res) {
         var user = req.user;
 
-        Article.find({ status: 'publicado' }).exec(function (err, docs) {
+        Article.find({ status: 'publicado' }).limit(20).exec(function (err, docs) {
             for (i = 0; i < docs.length; i++) {
                 var timeStamp = docs[i]._id.toString().substring(0, 8);
                 var date = new Date(parseInt(timeStamp, 16) * 1000);
@@ -236,7 +247,7 @@ module.exports = function (app, passport, mongoose) {
             }
             res.render('blog', { title: "Bonsaits - Blog", user: user, info: docs });
         });
-        
+
     });
 
     //BLOG SINGLE
@@ -244,8 +255,20 @@ module.exports = function (app, passport, mongoose) {
         var user = req.user;
 
         Article.find({ slug: req.params.nome }).exec(function (err, docs) {
-            console.log(docs);
-            res.render('blogSingle', { title: "Bonsaits - " + docs[0].title, user: user, info: docs[0] });
+            docs[0].text = decodeURIComponent(docs[0].text);
+
+            for (i = 0; i < docs.length; i++) {
+                var timeStamp = docs[i]._id.toString().substring(0, 8);
+                var date = new Date(parseInt(timeStamp, 16) * 1000);
+                docs[i].date = date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear();
+            }
+
+            Users.find({ _id: docs[0].author.main }).exec(function (err, us) {
+                console.log(us);
+                res.render('blogSingle', { title: "Bonsaits - " + docs[0].title, user: user, info: docs[0], single: true, author: us[0] });
+            });
+
+
         });
     });
 
@@ -258,11 +281,62 @@ module.exports = function (app, passport, mongoose) {
         } else {
             new Article({
                 'author.name': user.name.first + " " + user.name.last,
+                'author.main': user._id,
                 type: req.params.type
             }).save(function (err, docs) {
                 if (err) throw err
 
                 res.render('novo', { title: "Novo Post", user: user, id: docs._id, type: req.params.type, edit: false });
+            });
+        }
+    });
+
+    // BLOG EDIT
+    app.get('/blog/:id/editar', function (req, res) {
+        var user = req.user;
+
+        if (!user || user.status != 'admin') {
+            res.redirect('/');
+        } else {
+            Article.find({ id: req.params.slug }).exec(function (err, docs) {
+                if (err) throw err
+                docs[0].text = decodeURIComponent(docs[0].text);
+                res.render('novo', { title: "Novo Post", user: user, id: docs[0]._id, type: docs[0].type, edit: true, info: docs[0] });
+            });
+        }
+    });
+
+    // SLUG CHECK
+    app.get('/titleCheck/:id', function (req, res) {
+        var user = req.user,
+            id = req.params.id,
+            check = req.query.check,
+            title = req.query.title;
+        slug = func.string_to_slug(decodeURIComponent(title.replace('<p>', '').replace('</p>', '')));
+        console.log(check);
+        console.log(slug);
+
+        if (check == 'true') {
+            Article.find({ _id: id }, function (err, docs) {
+                if (docs[0].slug == slug) {
+                    res.end('yes');
+                } else {
+                    Article.find({ slug: slug }, function (err, arts) {
+                        if (arts.length > 0) {
+                            res.end('no');
+                        } else {
+                            res.end('yes');
+                        }
+                    });
+                }
+            });
+        } else {
+            Article.find({ slug: slug }, function (err, arts) {
+                if (arts.length > 0) {
+                    res.end('no');
+                } else {
+                    res.end('yes');
+                }
             });
         }
     });
@@ -285,7 +359,7 @@ module.exports = function (app, passport, mongoose) {
                 fs.unlink(tmp_path, function () {
                     if (err) throw err;
 
-                    res.send(sendImg);
+                    res.send({ "filelink": "/uploads/" + sendImg });
                 });
             });
 
@@ -386,7 +460,7 @@ module.exports = function (app, passport, mongoose) {
                 }, function (err) {
                     if (err)
                         throw err
-                    res.redirect('/blog/' + slug);
+                    res.send('/blog/' + slug);
                 });
             } else if (type == 'headline') {
                 var headline = req.body.headline;
@@ -402,7 +476,7 @@ module.exports = function (app, passport, mongoose) {
                 }, function (err) {
                     if (err)
                         throw err
-                    res.redirect('/blog/' + slug);
+                    res.send('/blog/' + slug);
                 });
             } else if (type == 'link') {
                 var link = req.body.link,
@@ -420,10 +494,56 @@ module.exports = function (app, passport, mongoose) {
                 }, function (err) {
                     if (err)
                         throw err
-                    res.redirect('/blog/' + slug);
+                    res.send('/blog/' + slug);
                 });
 
             }
+        }
+    });
+
+    // DELETAR ARTIGO
+    app.post('/deletarArtigo', function (req, res) {
+        var user = req.user,
+            id = req.body.id;
+
+        if (!user || user.status != 'admin') {
+            res.redirect('/');
+        } else {
+            Article.remove({ _id: id }).exec(function (err) {
+                if (err)
+                    throw err
+                res.send("OK");
+            });
+        }
+    });
+
+    // UPDATE PROFILE
+    app.post('/updateProfile', function (req, res) {
+        var user = req.user,
+            b = req.body;
+            console.log(b.linkedin)
+            if(b.linkedin == undefined){
+                b.linkedin = " "
+            }
+
+        if (!user || user.status == 'admin') {
+            Users.update({ _id: user.id }, { $set: {
+                'name.first': b.firstname,
+                'name.last': b.lastname,
+                email: b.email,
+                'localization.country': b.country,
+                'social.facebook.url': b.facebook,
+                'social.twitter.url': b.twitter,
+                'social.linkedin.url': b.linkedin,
+                bio: b.bio
+            }
+            }, function (err) {
+                if (err)
+                    throw err
+                res.redirect('/painel');
+            })
+        } else {
+
         }
     });
 

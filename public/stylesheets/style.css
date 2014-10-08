@@ -210,3 +210,10 @@
 .bg-gueime{
     background-position:50% 1% !important;
 }
+.dz-success-mark, .dz-error-mark{
+    display: none !important;
+}
+.profileinputs label, .profileinputs input, .profileinputs textarea{
+    width: 100%;
+    display: block
+}

@@ -48,6 +48,9 @@ var UserSchema = new mongoose.Schema({
             email: String,
             name: String,
             url: String
+        },
+        linkedin: {
+            url: String
         }
     },
     cupons: {

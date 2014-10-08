@@ -13,11 +13,11 @@ div.nav-container
 
                         div.pull-right
                             if (!locals.user)
-                                a.btn.btn-primary.login-button.btn-xs(href="entrar") entrar
-                                a.btn.btn-primary.btn-filled.btn-xs(href="registrar") registrar
+                                a.btn.btn-primary.login-button.btn-xs(href="/entrar") entrar
+                                a.btn.btn-primary.btn-filled.btn-xs(href="/registrar") registrar
                             else
-                                a.btn.btn-primary.login-button.btn-xs(href="painel") painel
-                                a.btn.btn-primary.btn-filled.btn-xs(href="logout") sair
+                                a.btn.btn-primary.login-button.btn-xs(href="/painel") painel
+                                a.btn.btn-primary.btn-filled.btn-xs(href="/logout") sair
                             a.language(href="#"): img(src="/images/english.png", alt="English")
 
             div.row.nav-menu

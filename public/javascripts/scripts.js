@@ -771,53 +771,21 @@ $(document).ready(function () {
 
     $('.analysis-price').text(formatReal(analysisPrice));
 });
-$(function() {
-	var imageCover;
-	var docTitle;
-	Dropzone.options.coverImage = {
-		paramName: "file",
-		maxFilesize: 2,
-		addRemoveLinks: true,
-		previewsContainer: null,
-		init: function () {
-			this.on('complete', function (file) {
-				imageCover = file.name;
-			});
-		}
-	};
 
-	$('#createTitle').redactor({
-		lang: 'pt_br',
-		toolbar: false,
-		minHeight: 97,
-		autosave: '/novoTitulo/' + thisArticle,
-		autosaveOnChange: true,
-		autosaveCallback: function (name, json) {
-			docTitle = json;
-		}
-	});
-	$('#createContent').redactor({
-		lang: 'pt_br',
-		plugins: ['fontcolor', 'fontsize', 'fontfamily'],
-		placeholder: 'Texto sensacional',
-		minHeight: 300,
-		imageUpload: '/artigoImage',
-		convertImageLinks: true,
-		convertVideoLinks: true,
-		imageUploadCallback: function (image, json) {
+$('.deletarArtigo').on('click', function () {
+    var id = $(this).attr('data-id');
 
-		},
-		autosave: '/novoArtigo/' + thisArticle,
-		autosaveOnChange: true,
-		autosaveCallback: function (json) {
+    var confirma = confirm("Quer mesmo deletar?");
 
-		}
-	});
-
-	$('.form-artigo').on('submit', function(){
-		$('input[name=cover]').attr('value', imageCover);
-		$('input[name=title]').attr('value', docTitle);
-		$(this).submit();
-	});
-
+    if(confirma == true){
+        $.ajax({
+            url: "/deletarArtigo",
+            type: "POST",
+            data: {id: id}
+        }).done(function(done){
+            if(done == "OK"){
+                window.location.replace("http://www.bonsaits.com/painel");
+            }
+        });
+    }
 });

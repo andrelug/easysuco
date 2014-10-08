@@ -17,7 +17,7 @@ block content
                 div.row
                     div.col-sm-12
                         h1.text-white.space-bottom-medium Análise de Orçamento
-                        span #{info.nome}
+                        span #{info.nome} - #{info.email}
                         
 
         div.text-banner
@@ -26,7 +26,7 @@ block content
                     div.col-sm-12
                         h1.center-block Painel
                         if(user.status == 'admin')
-                            h2 Orçamento para #{info.nome}
+                            h2 Orçamento para #{info.nome} - #{info.email}
                             
                             table.table.table-striped
                                 thead

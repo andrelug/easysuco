@@ -1,0 +1,74 @@
+extends partials/layout
+
+block content
+    div.loader
+        div.spinner
+            div.double-bounce1
+            div.double-bounce2
+
+    include pageelements/painelheader
+    
+    div.main-container
+        header.page-header.resume-header(style="padding:150px 0;")
+            div.background-image-holder.parallax-background
+                img.background-image(alt="background Image", src="images/hero22.jpg")
+
+            div.container
+                div.row
+                    div.col-sm-12
+                        h1.text-white.space-bottom-medium #{user.name.first}
+                        span Quanto mais sites, melhor!
+                        
+
+        div.text-banner
+            div.container
+                div.row
+                    div.col-sm-12
+                        br
+                        h2 Olá #{user.name.first}
+                        br
+                        if(user.status == 'admin')
+                            div.row
+                                div.col-md-6
+                                    form(action="/updateProfile", method="post")
+                                        div.inputs-wrapper.profileinputs
+                                            label Primeiro nome 
+                                                input(type="text", name="firstname", placeholder="Primeiro nome", value="#{user.name.first}")
+                                            br
+                                            label Sobrenome 
+                                                input(type="text", name="lastname", placeholder="Segundo nome", value="#{user.name.last}")
+                                            br
+                                            label Email 
+                                                input(type="text", name="email", placeholder="Email", value="#{user.email}")
+                                            br
+                                            label País 
+                                                if(user.localization.country)
+                                                    input(type="text", name="country", placeholder="País", value="#{user.localization.country}")
+                                                else
+                                                    input(type="text", name="country", placeholder="País")
+                                            br
+                                            label Facebook 
+                                                if(user.social.facebook.url)
+                                                    input(type="text", name="facebook", placeholder="Facebook link", value="#{user.social.facebook.url}")
+                                                else
+                                                    input(type="text", name="facebook", placeholder="Facebook link")
+                                            br
+                                            label Twitter 
+                                                if(user.social.twitter.url)
+                                                    input(type="text", name="twitter", placeholder="Twitter link", value="#{user.social.twitter.url}")
+                                                else
+                                                    input(type="text", name="twitter", placeholder="Twitter link")
+                                            br
+                                            label LinkedIn 
+                                                if(user.social.linkedin.url)
+                                                    input(type="text", name="linkedin", placeholder="LinkedIn link", value="#{user.social.linkedin.url}")
+                                                else
+                                                    input(type="text", name="linkedin", placeholder="LinkedIn link")
+                                            textarea(name="bio", placeholder="Sobre")
+                                                if(user.bio)
+                                                    #{user.bio}
+                                            br
+                                            input.btn.btn-primary.btn-filled(type="submit", value="Atualizar")
+                                            br
+
+    include pageelements/footer	

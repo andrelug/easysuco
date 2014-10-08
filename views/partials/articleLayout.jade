@@ -6,6 +6,18 @@ doctype html
 html.no-js(lang="pt_BR") <!--<![endif]-->
   head
     include head
+    meta(name="description", content="#{info.description}")
+    meta(name="tags", content="#{info.tags}")
+    meta(property="og:title", content="#{info.title}")
+    meta(property="og:type", content="article")
+    meta(property="og:image", content="http://www.bonsaits.com/uploads/#{info.cover}")
+    meta(property="og:url", content="http://www.bonsaits.com/blog/#{info.slug}")
+    meta(property="og:description", content="#{info.description}")
+    meta(name="twitter:card", content="summary")
+    meta(name="twitter:url", content="http://www.bonsaits.com/blog/#{info.slug}")
+    meta(name="twitter:title", content="#{info.title}")
+    meta(name="twitter:description", content="#{info.description}")
+    meta(name="twitter:image", content="http://www.bonsaits.com/uploads/#{info.cover}")
 
   body
     script.

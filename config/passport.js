@@ -211,12 +211,8 @@ module.exports = function (passport) {
                             if (err)
                                 throw err;
 
-                            // Verify the uniqueness of the loginName and tries to give the original that came from the social network
-                            if (login.length === 0) {
-                                newUser.name.loginName = profile.username;
-                            } else {
-                                newUser.name.loginName = func.randomString();
-                            }
+
+                            newUser.name.loginName = func.randomString();
 
                             // Generate a new loginName
                             // set all of the facebook information in our user model
@@ -232,7 +228,7 @@ module.exports = function (passport) {
                             newUser.email = profile.emails[0].value;
                             newUser.gender = profile.gender;
                             newUser.name.parsed = func.string_to_slug(profile.name.givenName);
-                            newUser.photo = "http://graph.facebook.com/" + profile.username + "/picture?type=large";
+                            newUser.photo = "http://graph.facebook.com/" + profile.id + "/picture?type=large";
 
                             // save our user to the database
                             newUser.save(function (err) {
