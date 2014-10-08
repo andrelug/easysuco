@@ -363,6 +363,9 @@ module.exports = function (app, passport, mongoose) {
                 });
             });
 
+        } else {
+            res.send("não deu")
+            console.log("não deu")
         }
 
     });
@@ -390,6 +393,9 @@ module.exports = function (app, passport, mongoose) {
                 });
             });
 
+        } else {
+            res.send("não deu")
+            console.log("não deu")
         }
 
     });
