@@ -1,0 +1,27 @@
+extends partials/layout
+
+block content
+    div.loader
+        div.spinner
+            div.double-bounce1
+            div.double-bounce2
+
+    include pageelements/painelheader
+    
+    div.main-container
+        header.page-header.resume-header(style="padding:150px 0;")
+            div.background-image-holder.parallax-background
+                img.background-image(alt="background Image", src="images/hero22.jpg")
+
+            div.container
+                div.row
+                    div.col-sm-12
+                        h1.text-white.space-bottom-medium Painel Bonsaits
+                        span Quanto mais sites, melhor!
+                        
+
+        div.text-banner
+            div.container
+                div.row
+                    div.col-sm-12
+                        h1 Oops...algo deu errado! Por favor volte à página inicial

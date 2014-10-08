@@ -1331,3 +1331,6 @@
 {"name":"newrelic","hostname":"Drubz","pid":3708,"component":"collector_api","level":30,"msg":"Connected to collector-115.newrelic.com:443 with agent run ID 849916252.","time":"2014-10-08T04:00:39.275Z","v":0}
 {"name":"newrelic","hostname":"Drubz","pid":12708,"level":30,"msg":"Starting New Relic for Node.js connection process.","time":"2014-10-08T17:16:33.856Z","v":0}
 {"name":"newrelic","hostname":"Drubz","pid":10608,"level":30,"msg":"Starting New Relic for Node.js connection process.","time":"2014-10-08T17:16:39.110Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":2572,"level":30,"msg":"Starting New Relic for Node.js connection process.","time":"2014-10-08T17:53:14.100Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":2572,"component":"new_relic_response","level":30,"msg":"Reporting to: https://rpm.newrelic.com/accounts/780278/applications/5350917","time":"2014-10-08T17:53:16.985Z","v":0}
+{"name":"newrelic","hostname":"Drubz","pid":2572,"component":"collector_api","level":30,"msg":"Connected to collector-115.newrelic.com:443 with agent run ID 851339980.","time":"2014-10-08T17:53:16.986Z","v":0}
