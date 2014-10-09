@@ -42,6 +42,7 @@
     "passport-google-oauth": "*",
     "passport-local": "*",
     "passport-twitter": "*",
+    "qs": "^2.2.4",
     "response-time": "^2.2.0",
     "stylus": "*"
   },
