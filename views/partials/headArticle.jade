@@ -1,0 +1,44 @@
+title= title
+meta(charset="utf-8")
+meta(name="viewport", content="width=device-width, initial-scale=1")
+meta(http-equiv="X-UA-Compatible", content="IE=edge")
+meta(name="description", content="#{info.description}")
+meta(name="tags", content="#{info.tags}")
+meta(property="og:title", content="#{info.title}")
+meta(property="og:type", content="article")
+meta(property="og:image", content="http://www.bonsaits.com/uploads/#{info.cover}")
+meta(property="og:url", content="http://www.bonsaits.com/blog/#{info.slug}")
+meta(property="og:description", content="#{info.description}")
+meta(name="twitter:card", content="summary")
+meta(name="twitter:url", content="http://www.bonsaits.com/blog/#{info.slug}")
+meta(name="twitter:title", content="#{info.title}")
+meta(name="twitter:description", content="#{info.description}")
+meta(name="twitter:image", content="http://www.bonsaits.com/uploads/#{info.cover}")
+link(rel="icon", type="image/png", href="/images/favicon.png")
+link(rel='stylesheet', href='/stylesheets/flexslider.min.css', type="text/css", media="all")
+link(rel='stylesheet', href='/stylesheets/line-icons.min.css', type="text/css", media="all")
+link(rel='stylesheet', href='/stylesheets/elegant-icons.min.css', type="text/css", media="all")
+link(rel='stylesheet', href='/stylesheets/lightbox.min.css', type="text/css", media="all")
+link(rel='stylesheet', href='/stylesheets/bootstrap.min.css', type="text/css", media="all")
+link(rel='stylesheet', href='/stylesheets/theme-rocklobster.css', type="text/css", media="all")
+link(rel='stylesheet', href='/stylesheets/style.css', type="text/css", media="all")
+link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700%7CRaleway:700', type="text/css")
+script(src="/javascripts/modernizr-2.6.2-respond-1.1.0.min.js")
+script.
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-55225335-1', 'auto');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+div#fb-root
+script.
+    (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&appId=1519238171626381&version=v2.0";
+    fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));

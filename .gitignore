@@ -3,3 +3,4 @@
 /public/uploads
 /.idea
 /azure.err
+/newrelic_agent.log
