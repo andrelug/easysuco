@@ -4,38 +4,38 @@ doctype html
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> 
 html.no-js(lang="pt_BR") <!--<![endif]-->
-  head
-    include head
-    meta(name="description", content="#{info.description}")
-    meta(name="tags", content="#{info.tags}")
-    meta(property="og:title", content="#{info.title}")
-    meta(property="og:type", content="article")
-    meta(property="og:image", content="http://www.bonsaits.com/uploads/#{info.cover}")
-    meta(property="og:url", content="http://www.bonsaits.com/blog/#{info.slug}")
-    meta(property="og:description", content="#{info.description}")
-    meta(name="twitter:card", content="summary")
-    meta(name="twitter:url", content="http://www.bonsaits.com/blog/#{info.slug}")
-    meta(name="twitter:title", content="#{info.title}")
-    meta(name="twitter:description", content="#{info.description}")
-    meta(name="twitter:image", content="http://www.bonsaits.com/uploads/#{info.cover}")
+    head
+        include head
+        meta(name="description", content="#{info.description}")
+        meta(name="tags", content="#{info.tags}")
+        meta(property="og:title", content="#{info.title}")
+        meta(property="og:type", content="article")
+        meta(property="og:image", content="http://www.bonsaits.com/uploads/#{info.cover}")
+        meta(property="og:url", content="http://www.bonsaits.com/blog/#{info.slug}")
+        meta(property="og:description", content="#{info.description}")
+        meta(name="twitter:card", content="summary")
+        meta(name="twitter:url", content="http://www.bonsaits.com/blog/#{info.slug}")
+        meta(name="twitter:title", content="#{info.title}")
+        meta(name="twitter:description", content="#{info.description}")
+        meta(name="twitter:image", content="http://www.bonsaits.com/uploads/#{info.cover}")
 
-  body
-    script.
-        window.fbAsyncInit = function() {
-        FB.init({
-            appId      : '1519238171626381',
-            xfbml      : true,
-            version    : 'v2.1'
-        });
-        };
+    body
+        script.
+            window.fbAsyncInit = function() {
+            FB.init({
+                appId      : '1519238171626381',
+                xfbml      : true,
+                version    : 'v2.1'
+            });
+            };
 
-        (function(d, s, id){
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) {return;}
-            js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.net/en_US/sdk.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
+            (function(d, s, id){
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) {return;}
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
 
     block content
 
