@@ -135,7 +135,9 @@ var getProducts = function (codes) {
 
 
 module.exports = function (app, passport, mongoose) {
-    app.get('/', function (req, res, next) {
+
+    app.route('/')
+    .get(function (req, res, next) {
         var user = req.user;
         if (!user) {
             res.render('index', { title: 'Bonsaits - Fazemos ótimos WebSites' });
