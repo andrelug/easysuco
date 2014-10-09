@@ -45,14 +45,7 @@ process.env.TMPDIR = './public/tmp';
     app.use(flash()); // use connect-flash for flash messages stored in session
     app.use(require('stylus').middleware(path.join(__dirname, 'public')));
     app.use(express.static(path.join(__dirname, 'public'), {maxAge: 86400000}));
-  /*  app.use(function(req, res) {
-     res.status(400);
-     res.render('404', {title: '404: File Not Found'});
-     });
-     app.use(function(error, req, res, next) {
-     res.status(500);
-     res.render('500', {title:'500: Internal Server Error', error: error});
-     }); */
+
     app.enable('trust proxy');
     
     var multer = require('multer');
@@ -62,10 +55,6 @@ var env = process.env.NODE_ENV || 'development';
 
 if ('development' == env) {
    app.use(errorHandler());
-   app.use(function (req, res, next) {
-        console.log(req.body) // populated!
-        next();
-    });
 }
 
 // New Relic
@@ -74,11 +63,19 @@ app.locals.newrelic = newrelic;
 // routes ======================================================================
 require('./app/routes.js')(app, passport, mongoose); // load our routes and pass in our app and fully configured passport
 
+app.use(function(req, res) {
+    res.status(400);
+    res.render('404', {title: '404: File Not Found'});
+});
+app.use(function(error, req, res, next) {
+    res.status(500);
+    res.render('500', {title:'500: Internal Server Error', error: error});
+});
 app.use(function (error, req, res, next) {
     res.status(500);
     res.render('500.jade', {title: '500: Internal Server Error', error: error});
 });
 
-http.createServer(app).listen(app.get('port'), function () {
+app.listen(app.get('port'), function () {
     console.log("Express server listening on port " + app.get('port'));
 });
