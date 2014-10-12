@@ -648,7 +648,9 @@ module.exports = function (app, passport, mongoose) {
 
         if (data == "BeAll2014") {
             res.send("60000");
-        } else {
+        } else if(data == "ONG2014"){
+            res.send("150000");
+        }else {
             res.send('0');
         }
     });
