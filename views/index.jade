@@ -1,10 +1,7 @@
 extends partials/layout
 
 block content
-    div.loader
-        div.spinner
-            div.double-bounce1
-            div.double-bounce2
+    
 
     include pageelements/header
 
@@ -134,10 +131,14 @@ block content
         section.strip.bg-primary
             div.container
                 div.row.clearfix
-                    form.mail-list-signup
+                    form.mail-list-signup(name="insightly_web_to_contact")
                         div.col-sm-9.col-xs-12.pull-left.clear-fix
                             h3.text-white.pull-left <span>Saiba tudo sobre WebSites:&nbsp;</span>
-                            input.signup-email-field.validate-required.validate-email(type="text", placeholder="Adicione seu e-mail aqui", name="email")
+                            input(type="hidden", name="formId", value="VyRr8LEDHVs9Zwr5Wn2oPQ==")
+                            input(type="hidden", name="LastName", value="Lead")
+                            input(type="hidden", name="emails[0].Label", value="Work")
+                            input.signup-email-field.validate-required.validate-email(type="text", placeholder="Adicione seu e-mail aqui", name="emails[0].Value")
+                            
                             span.enviar-confirm.text-white(style="font-size:14pt;float:right;background:none;padding:0;") Obrigado!!
                             span.enviar-error.text-white(style="font-size:14pt;float:right;background:none;padding:0;") Oops...algo deu errado!!
                         div.col-sm-3.col-xs12.pull-right.text-right
@@ -313,8 +314,12 @@ block content
                                 div.row
                                     h4 Suas informações
                                     br
-                                    input.contato-nome(type="text", placeholder="Seu nome")
-                                    input.contato-email(type="text", placeholder="Seu email")
+                                    form.insight(name="insightly_web_to_contact")
+                                        input(type="hidden", name="formId", value="VyRr8LEDHVs9Zwr5Wn2oPQ==")
+                                        input.contato-nome(type="text", name="FirstName", placeholder="Seu nome")
+                                        input(type="hidden", name="LastName", value="Orcamento")
+                                        input(type="hidden", name="emails[0].Label", value="Work")
+                                        input.contato-email(type="text", placeholder="Seu email", name="emails[0].Value")
                                     input.form-terms(type="checkbox", name="termos", style="margin-right:10px;margin-top:10px;")
                                     | Concordo comso <a href="/termos-de-uso" data-toggle="modal" data-target="#termos">Termos de Uso</a>  
                                     a.btn.btn-primary.btn-filled.btn-block.enviar-orcamento Enviar Orçamento
@@ -337,10 +342,13 @@ block content
                 div.row
                     div.col-md-4.col-md-offset-4.col-sm-6.col-sm-offset-3
                         div.form-wrapper.clearfix
-                            form.form-contact.email-form
+                            form.form-contact.email-form(name="insightly_web_to_contact")
                                 div.inputs-wrapper
-                                    input.form-name.validate-required(type="text", placeholder="Nome", name="name")
-                                    input.form-email.validate-required(type="text", placeholder="Email", name="email")
+                                    input(type="hidden", name="formId", value="VyRr8LEDHVs9Zwr5Wn2oPQ==")
+                                    input(type="hidden", name="LastName", value="Contato")
+                                    input(type="hidden", name="emails[0].Label", value="Work")
+                                    input.form-name.validate-required(type="text", placeholder="Nome", name="FirstName")
+                                    input.form-email.validate-required(type="text", placeholder="Email", name="emails[0].Value")
                                     textarea.form-message.validate-required(name="message", placeholder="Mensagem")
 
                                 input.send-form(type="submit", value="Enviar")
@@ -348,6 +356,7 @@ block content
                                     span.text-white Mensagem enviada - Obrigado!
                                 div.form-error
                                     span.text-white Por favor complete os campos acima
+
 
         a#faq.in-page-link
 

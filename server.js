@@ -71,10 +71,6 @@ app.use(function(error, req, res, next) {
     res.status(500);
     res.render('500', {title:'500: Internal Server Error', error: error});
 });
-app.use(function (error, req, res, next) {
-    res.status(500);
-    res.render('500.jade', {title: '500: Internal Server Error', error: error});
-});
 
 app.listen(app.get('port'), function () {
     console.log("Express server listening on port " + app.get('port'));

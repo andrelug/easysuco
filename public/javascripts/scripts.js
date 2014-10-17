@@ -309,7 +309,7 @@ $(document).ready(function () {
             jQuery.ajax({
                 type: "POST",
                 url: "/contact",
-                data: thisForm.serialize(),
+                data: {name: $('.email-form').find('.form-name').val(), email: $('.email-form').find('.form-email').val(), message: $('.email-form').find('.form-message').val()},
                 success: function (response) {
                     console.log(response);
                     // Swiftmailer always sends back a number representing numner of emails sent.
@@ -321,6 +321,7 @@ $(document).ready(function () {
                             setTimeout(function () { thisForm.find('.form-success').fadeOut(500); }, 5000);
                         }
                     }
+                    
                     // If error text was returned, put the text in the .form-error div and show it.
                     else {
                         // Keep the current error text in a data attribute on the form
@@ -329,6 +330,12 @@ $(document).ready(function () {
                         thisForm.find('.form-error').text("Oops...algo deu errado").fadeIn(1000);
                         thisForm.find('.form-success').fadeOut(1000);
                     }
+                    $.ajax({
+                        type: "POST",
+                        url: 'https://b4najwjr.insight.ly/WebToContact/Create',
+                        data: $('.email-form').serialize()
+                    }).success(function (data) {
+                    });
                 }
             });
         }
@@ -423,11 +430,17 @@ $(window).load(function () {
                 $.ajax({
                     type: "POST",
                     url: "/signupEmail",
-                    data: form
+                    data: {email: userEmail}
                 }).done(function (data) {
                     if (data == "OK") {
                         $(thisForm).find('.btn-filled').addClass('disabled');
                         $(thisForm).find('.enviar-confirm').delay(300).slideDown();
+                        $.ajax({
+                            type: "POST",
+                            url: 'https://b4najwjr.insight.ly/WebToContact/Create',
+                            data: $('.mail-list-signup').serialize()
+                        }).success(function (data) {
+                        });
                     } else {
                         $(thisForm).find('.btn-filled').addClass('disabled');
                         $(thisForm).find('.enviar-error').delay(300).slideDown();
@@ -675,7 +688,7 @@ $('.enviar-orcamento').on('click', function () {
         $('.enviar-itens').delay(300).slideDown().delay(3000).slideUp();
     } else if ($('.contato-nome').val() === "" || $('.contato-email').val() === "") {
         $('.enviar-complete').delay(300).slideDown().delay(3000).slideUp();
-    } else if($('.form-terms').is(':checked') != true){
+    } else if ($('.form-terms').is(':checked') != true) {
         $('.enviar-terms').delay(300).slideDown().delay(3000).slideUp();
     } else {
         $.ajax({
@@ -686,6 +699,13 @@ $('.enviar-orcamento').on('click', function () {
             if (data == "OK") {
                 $(thisone).addClass('disabled');
                 $('.enviar-confirm').delay(300).slideDown();
+
+                $.ajax({
+                    type: "POST",
+                    url: 'https://b4najwjr.insight.ly/WebToContact/Create',
+                    data: $('.insight').serialize()
+                }).success(function (data) {
+                });
             } else {
                 $(thisone).addClass('disabled');
                 $('.enviar-error').delay(300).slideDown();
