@@ -332,7 +332,7 @@ $(document).ready(function () {
                     }
                     $.ajax({
                         type: "POST",
-                        url: 'https://b4najwjr.insight.ly/WebToContact/Create',
+                        url: 'https://googleapps.insight.ly/WebToContact/Create',
                         data: $('.email-form').serialize()
                     }).success(function (data) {
                     });
@@ -437,7 +437,7 @@ $(window).load(function () {
                         $(thisForm).find('.enviar-confirm').delay(300).slideDown();
                         $.ajax({
                             type: "POST",
-                            url: 'https://b4najwjr.insight.ly/WebToContact/Create',
+                            url: 'https://googleapps.insight.ly/WebToContact/Create',
                             data: $('.mail-list-signup').serialize()
                         }).success(function (data) {
                         });
@@ -702,7 +702,7 @@ $('.enviar-orcamento').on('click', function () {
 
                 $.ajax({
                     type: "POST",
-                    url: 'https://b4najwjr.insight.ly/WebToContact/Create',
+                    url: 'https://googleapps.insight.ly/WebToContact/Create',
                     data: $('.insight').serialize()
                 }).success(function (data) {
                 });
