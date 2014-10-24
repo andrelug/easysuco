@@ -650,6 +650,12 @@ module.exports = function (app, passport, mongoose) {
             res.send("60000");
         } else if(data == "ONG2014"){
             res.send("150000");
+        }else if(data == "SWYouth1000"){
+            res.send("100000");
+        }else if(data == "SWYouth2000"){
+            res.send("200000");
+        }else if(data == "SWYouth3000"){
+            res.send("300000");
         }else {
             res.send('0');
         }
