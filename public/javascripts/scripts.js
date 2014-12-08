@@ -361,9 +361,9 @@ $(window).load(function () {
 
     // Isotope Projects
 
-    $('.projects-container').isotope({
-        itemSelector: '.project',
-        layoutMode: 'fitRows'
+    $('.blog-masonry-container').isotope({
+        itemSelector: '.blog-masonry-item',
+        layoutMode: 'masonry'
     });
 
     $('.filters li').click(function () {
@@ -373,7 +373,7 @@ $(window).load(function () {
         current.addClass('active');
 
         var filterValue = current.attr('data-filter');
-        var container = current.closest('.projects-wrapper').find('.projects-container');
+        var container = current.closest('.projects-wrapper').find('.blog-masonry-container');
         container.isotope({ filter: filterValue });
     });
 
@@ -454,6 +454,8 @@ $(window).load(function () {
 
     // Blog Masonry
 
+    /*
+
     $('.blog-masonry-container').isotope({
         itemSelector: '.blog-masonry-item',
         layoutMode: 'masonry'
@@ -469,6 +471,8 @@ $(window).load(function () {
         var container = current.closest('.blog-masonry').find('.blog-masonry-container');
         container.isotope({ filter: filterValue });
     });
+
+    */
 
 
 

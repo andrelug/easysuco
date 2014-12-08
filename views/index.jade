@@ -8,11 +8,11 @@ block content
     div.main-container
         header.page-header.resume-header
             div.background-image-holder.parallax-background
-                img.background-image(src="images/hero8.jpg", alt="Background Image")
+                img.background-image(src="images/background.jpg", alt="Background Image")
 
             div.container
                 div.row
-                    div.col-sm-12
+                    div.col-sm-12.text-center
                         h1.text-white.space-bottom-medium Fazemos WebSites
                         span Sites institucionais, blogs, landing pages, hot pages...pode escolher
 
@@ -62,72 +62,6 @@ block content
                             span Nossos sites funcionam em qualquer tamanho de tela
                             span.sub
 
-
-        a#portfolio.in-page-link
-
-        section.no-pad-bottom.projects-gallery
-            div.container
-                div.row
-                    div.col-md-offset-3.col-sm-8.col-sm-offset-2.text-center.col-md-6
-                        h1 Nossos últimos projetos
-                        p.lead Tivemos a oportunidade de trabalhar com excelentes empresas e ONGs. Veja alguns de nossos trabalhos
-
-            div.projects-wrapper.clearfix
-                div.container
-                    div.row
-                        ul.filters
-                            li.active(data-filter="*") tudo
-                            li(data-filter=".development") desenvolvimento
-                            li(data-filter=".consult") consultoria
-                            li(data-filter=".design") design
-
-                div.projects-container
-                    div.col-md-6.col-sm-12.no-pad.project.design.development.image-holder
-                        div.background-image-holder
-                            img.background-image(src="images/benvenuto.jpg", alt="Background Image")
-                        div.hover-state
-                            div.align-vertical.text-center(style="padding:0 20px;")
-                                h1.text-white <strong>Benvenuto</strong> Plataforma Web
-                                p.text-white Além do WebSite, também desenvolvemos as landing pages dos Ebooks, blog, realizamos a integração com CRM, lista de e-mails e gerenciador de projetos.
-                                a.btn.btn-primary.btn-white(href="http://www.benvenuto.com.br", target="_blanc") Ver projeto
-
-                    div.col-md-6.col-sm-12.no-pad.project.design.development.consult.image-holder
-                        div.background-image-holder.bg-gueime
-                            img.background-image(src="images/gueime.jpg", alt="Background Image")
-                        div.hover-state
-                            div.align-vertical.text-center(style="padding:0 20px;")
-                                h1.text-white <strong>Gueime</strong> Plataforma Web
-                                p.text-white Trabalhamos com o desenvolvimento o administrador de conteúdo (CMS), design, WebSite e presença online
-                                a.btn.btn-primary.btn-white(href="http://www.gueime.com.br", target="_blanc") Ver projeto
-
-                    div.col-md-4.col-sm-6.no-pad.project.development.image-holder
-                        div.background-image-holder
-                            img.background-image(src="images/beall.jpg", alt="Background Image")
-                        div.hover-state
-                            div.align-vertical.text-center(style="padding:0 20px;")
-                                h1.text-white <strong>BeAll</strong> WebSite
-                                p.text-white Desenvolvemos o WebSite e o integramos CRM e lista de emails.
-                                a.btn.btn-primary.btn-white(href="http://www.beall.com.br", target="_blanc") Ver projeto
-
-                    div.col-md-4.col-sm-6.no-pad.project.development.image-holder
-                        div.background-image-holder
-                            img.background-image(src="images/juiz.jpg", alt="Background Image")
-                        div.hover-state
-                            div.align-vertical.text-center(style="padding:0 20px;")
-                                h1.text-white <strong>Juiz de Foda</strong> WebSite
-                                p.text-white Desenvolvemos o WebSite e otimização do servidor
-                                a.btn.btn-primary.btn-white(href="http://www.juizdefoda.com.br", target="_blanc") Ver projeto
-
-                    div.col-md-4.col-sm-6.no-pad.project.consult.image-holder
-                        div.background-image-holder
-                            img.background-image(src="images/rede.jpg", alt="Background Image")
-                        div.hover-state
-                            div.align-vertical.text-center(style="padding:0 20px;")
-                                h1.text-white <strong>Rede Cidadã</strong> Consultoria
-                                p.text-white Prestamos consultoria digital e reestruturamos o WebSite
-                                a.btn.btn-primary.btn-white(href="http://www.redecidada.org.br", target="_blanc") Ver projeto
-
-
         section.strip.bg-primary
             div.container
                 div.row.clearfix
@@ -144,6 +78,102 @@ block content
                         div.col-sm-3.col-xs12.pull-right.text-right
                             input.btn.btn-primary.btn-filled(type="submit", value="Inscrever", style="outline:none;")
 
+
+        a#portfolio.in-page-link
+
+        section.no-pad-bottom.blog-masonry.bg-muted
+            div.container
+                div.row(style="margin-bottom:30px;")
+                    div.col-md-offset-3.col-sm-8.col-sm-offset-2.text-center.col-md-6
+                        h1 Nossos últimos projetos
+                        p.lead Tivemos a oportunidade de trabalhar com excelentes empresas e ONGs. Veja alguns de nossos trabalhos
+
+            div.projects-wrapper.clearfix
+                div.container
+                    div.row
+                        ul.filters
+                            li.active(data-filter="*") tudo
+                            li(data-filter=".development") desenvolvimento
+                            li(data-filter=".consult") consultoria
+                            li(data-filter=".design") design
+
+                div.container
+                    div.row
+                        div.blog-masonry-container
+                            div.col-md-4.col-sm-6.blog-masonry-item.development.design
+                                div.item-inner
+                                    a(href="http://www.gueime.com.br", target="_blank")
+                                        img(alt="Gueime", src="images/gueime.jpg")
+                                    div.post-title
+                                        a(href="http://www.gueime.com.br", target="_blank")
+                                            h2 Gueime
+
+                            div.col-md-4.col-sm-6.blog-masonry-item.development.consult.design
+                                div.item-inner
+                                    a(href="http://www.benvenuto.com.br", target="_blank")
+                                        img(alt="Benvenuto", src="images/benvenuto.jpg")
+                                    div.post-title
+                                        a(href="http://www.benvenuto.com.br", target="_blank")
+                                            h2 Benvenuto
+
+                            div.col-md-4.col-sm-6.blog-masonry-item.development
+                                div.item-inner
+                                    a(href="http://www.beall.com.br", target="_blank")
+                                        img(alt="BeAll", src="images/beall.jpg")
+                                    div.post-title
+                                        a(href="http://www.beall.com.br", target="_blank")
+                                            h2 BeAll
+
+                            div.col-md-4.col-sm-6.blog-masonry-item.development
+                                div.item-inner
+                                    a(href="http://www.juizdefoda.com.br", target="_blank")
+                                        img(alt="BeAll", src="images/juiz.jpg")
+                                    div.post-title
+                                        a(href="http://www.juizdefoda.com.br", target="_blank")
+                                            h2 Juiz de Foda
+
+                            div.col-md-4.col-sm-6.blog-masonry-item.consult
+                                div.item-inner
+                                    a(href="http://www.redecidada.org.br", target="_blank")
+                                        img(alt="Rede Cidadã", src="images/rede.jpg")
+                                    div.post-title
+                                        a(href="http://www.redecidada.org.br", target="_blank")
+                                            h2 Rede Cidadã
+
+                            div.col-md-4.col-sm-6.blog-masonry-item.design.development
+                                div.item-inner
+                                    a(href="http://www.doeja.com", target="_blank")
+                                        img(alt="Doe Já", src="images/doeja.jpg")
+                                    div.post-title
+                                        a(href="http://www.doeja.com", target="_blank")
+                                            h2 Doe Já
+
+                            div.col-md-4.col-sm-6.blog-masonry-item.development
+                                div.item-inner
+                                    a(href="http://www.cachacajanuaria.com.br", target="_blank")
+                                        img(alt="Doe Já", src="images/januaria.jpg")
+                                    div.post-title
+                                        a(href="http://www.cachacajanuaria.com.br", target="_blank")
+                                            h2 Cachaça Januária
+
+                            div.col-md-4.col-sm-6.blog-masonry-item.development
+                                div.item-inner
+                                    a(href="http://www.captaqui.com.br", target="_blank")
+                                        img(alt="Captaqui", src="images/captaqui.jpg")
+                                    div.post-title
+                                        a(href="http://www.cachacajanuaria.com.br", target="_blank")
+                                            h2 Captaqui
+
+                            div.col-md-4.col-sm-6.blog-masonry-item.development
+                                div.item-inner
+                                    a(href="http://blog.benvenuto.com.br/", target="_blank")
+                                        img(alt="Captaqui", src="images/blogbenvenuto.jpg")
+                                    div.post-title
+                                        a(href="http://blog.benvenuto.com.br/", target="_blank")
+                                            h2 Blog Benvenuto
+
+
+
         a#orcamento.in-page-link
 
         section.pure-text-centered
@@ -154,7 +184,7 @@ block content
                         h1: strong Escolha seu WebSite
                         div.row
                             div.col-md-8.col-md-offset-2
-                                span.sub.alt-font O orçamento criado servirá como referência para futuras conversas sobre o projeto e não representa um compromisso ou, necessáriamente, sua intenção final sobre o que deseja.
+                                span.sub.alt-font O orçamento criado servirá como referência para futuras conversas sobre o projeto e não representa um compromisso ou, necessariamente, sua intenção final sobre o que deseja.
 
                         div.row(style="margin-top:30px;")
                             div.col-md-8
@@ -187,10 +217,10 @@ block content
                                             i.icon.icon-wallet.icon-large
                                             br
                                             | Ecommerce
-                                        a.btn.btn-primary(title="Portfolio", data-price="80000", data-toggle="tooltip", data-placement="bottom", data-description="Nada chama mais atenção profisisonal do que ter seu próprio site mostrando seu currículo e portfolio de forma agradável e bonita.", data-slug="port", data-id="7")
+                                        a.btn.btn-primary(title="Portfólio", data-price="80000", data-toggle="tooltip", data-placement="bottom", data-description="Nada chama mais atenção profisisonal do que ter seu próprio site mostrando seu currículo e portfolio de forma agradável e bonita.", data-slug="port", data-id="7")
                                             i.icon.icon-profile-male.icon-large
                                             br
-                                            | Portfolio
+                                            | Portfólio
                                         a.btn.btn-primary(style="border-top-right-radius:0;", title="Sistemas", data-price="0", data-description="Sejam sistemas mais complexos ou projetos de StartUps, a Bonsaits consegue resolver seu problema. Entre em contato conosco para mais detalhes e marcamos uma reunião para discutir suas necessidades particulares.", data-slug="outros", data-id="8")
                                             i.icon.icon-gears.icon-large
                                             br
@@ -321,7 +351,7 @@ block content
                                         input(type="hidden", name="emails[0].Label", value="Work")
                                         input.contato-email(type="text", placeholder="Seu email", name="emails[0].Value")
                                     input.form-terms(type="checkbox", name="termos", style="margin-right:10px;margin-top:10px;")
-                                    | Concordo comso <a href="/termos-de-uso" data-toggle="modal" data-target="#termos">Termos de Uso</a>  
+                                    | Concordo com os <a href="/termos-de-uso" data-toggle="modal" data-target="#termos">Termos de Uso</a>  
                                     a.btn.btn-primary.btn-filled.btn-block.enviar-orcamento Enviar Orçamento
                                     div.enviar-confirm A Bonsaits agradece seu interesse! <br>Entraremos em contato em breve.
                                     div.enviar-complete Por favor preencha seu nome e email
