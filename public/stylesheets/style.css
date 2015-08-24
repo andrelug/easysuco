@@ -12,7 +12,7 @@
         border-radius: 0 !important;
     }
     .btn-calc-bottom a{
-        border-top: 2px solid #6dbcdb !important;
+        border-top: 2px solid #B77BA4 !important;
     }
     .row .hospedagem a,.row .hora a{
         width: 100% !important;
@@ -36,7 +36,7 @@
 }
 .calc-head{
     border-radius: 25px;
-    background-color: #6DBCDB;
+    background-color: #B77BA4;
     padding: 10px;
 }
 .calc-head h4{
@@ -58,7 +58,7 @@
     font-size: 16pt;
 }
 .calc-site-description, .hospedagem-site-description {
-    background-color: #6DBCDB;
+    background-color: #B77BA4;
     color: white;
     padding: 10px;
     display: none;
@@ -79,8 +79,8 @@
     font-size: 11pt;
 }
 .btn-primary.active{
-    background-color: #6DBCDB;
-    border-color: #6DBCDB;
+    background-color: #B77BA4;
+    border-color: #B77BA4;
     box-shadow: none;
 }
 .form-login-center input{
@@ -111,7 +111,7 @@
     font-size: 14pt;
 }
 .vert-info{
-    background-color: #6DBCDB;
+    background-color: #B77BA4;
     color: white;
     height: 0;
     display: block;
@@ -132,7 +132,7 @@
     transition: all 200ms ease;
 }
 .vert-selected{
-    background-color: #6DBCDB;
+    background-color: #B77BA4;
     color: white;
 }
 .enviar-orcamento{
@@ -220,4 +220,7 @@
 .projects-container .image-holder{
     border: 5px solid white;
     box-shadow: 0px 0px 3px black;
+}
+.imgicon{
+    width: 36px;
 }
